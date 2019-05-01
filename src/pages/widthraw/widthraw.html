@@ -1,0 +1,77 @@
+<!--
+  Generated template for the WidthrawPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>widthraw</ion-title>
+    <button ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+      <ion-row>
+          <ion-col col-12>
+            <ion-list>
+
+
+
+              <ion-item class="withdraw_div" >
+
+
+                <h2>Your Wallet Amount</h2>
+                <p>{{ wallet_amt }}</p>
+
+                <button style="background: #025f04;"  (click)="openenterpoints()">Withdraw</button>
+
+
+      </ion-item>
+
+      <ion-item class="withdraw_div">
+
+
+                <h2>Total Balance</h2>
+                <p>{{ wallet_amt }}</p>
+
+
+      </ion-item>
+
+
+
+
+
+
+
+
+
+              <ion-item class="withdraw_div">
+
+
+                            <h2>Your Play Point</h2>
+                            <p>{{ play_pt }}</p>
+
+                          <button style=" background: #044b94;" (click)="playpt()">Withdraw</button>
+
+                  </ion-item>
+
+
+
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+  </ion-grid>
+
+</ion-content>

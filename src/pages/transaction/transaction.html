@@ -1,0 +1,241 @@
+<!--
+  Generated template for the TransactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header> 
+  
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>transaction</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+    
+                <div class="accordion vertical" >
+                    <ul> 
+                      <li>
+                         <input type="radio" id="radio-1" name="radio-accordion"  checked="checked"/>
+                            <label for="radio-1">Winning History</label>
+                                <div class="content" >
+                                  <ion-grid> 
+                                    <ion-row>
+                                      <ion-col col-12>
+                                          <ion-grid style="padding:0px;" *ngFor="let winning of winnings "  > 
+                                              <ion-row class="score-table">
+                                                  
+												  <ion-col col-12>
+												  {{winning.team_1}} Vs {{winning.team_2}}
+
+												 </ion-col>  
+												  <ion-col col-8 class="point-content">
+                                                    {{winning.amount}}
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score" (click)="openhistry(winning)">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid>
+    
+                                      <!--    <ion-grid style="padding:0px;"> 
+                                              <ion-row class="score-table">
+                                                  <ion-col col-8 class="point-content">
+                                                    Devi
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid> -->
+    
+                                      </ion-col>                                
+                                    </ion-row>
+                                  </ion-grid>                      
+                            </div>
+                        </li>
+                
+                        <li>
+                         <input type="radio" id="radio-2" name="radio-accordion" />
+                            <label for="radio-2">Withdraw History</label>
+                              <div class="content" >
+                                  <ion-grid> 
+                                    <ion-row>
+                                      <ion-col col-12>
+									   <ion-grid style="padding:0px;" *ngFor="let withdraw of withdrawls "  > 
+                                              <ion-row class="score-table">
+                                                 
+											  <ion-col col-12>
+												  {{withdraw.withdraw_amount}} 
+
+												 </ion-col>  
+
+
+												 <ion-col col-8 class="point-content">
+                                                    {{withdraw.withdraw_request_at| slice:0:10 | date:"dd/MM/yy"}}
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score" (click)="withdrawhistory(withdraw)">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid>
+									  
+                                        
+                                      </ion-col>
+                                        
+                                    </ion-row>
+                                 </ion-grid>                          
+                              </div>
+                        </li>   
+                
+                         <li>
+                            <input type="radio" id="radio-3" name="radio-accordion" />
+                              <label for="radio-3">Payment Transaction</label>
+                                <div class="content" >
+                                    <ion-grid> 
+                                      <ion-row>
+                                        <ion-col col-12>
+										<ion-grid style="padding:0px;" *ngFor="let payment of payments "  > 
+                                              <ion-row class="score-table">
+                                                  
+												   <ion-col col-12>
+												  {{payment.payment_status}} 
+
+												 </ion-col>  
+												  
+												  
+												  <ion-col col-8 class="point-content">
+                                                    {{payment.created_at| slice:0:10 | date:"dd/MM/yy"}}
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score" (click)="paymenthistory(payment)">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid>
+										
+										
+                                        
+                                        </ion-col>                                    
+                                      </ion-row>
+                                    </ion-grid>                             
+                                </div>
+                         </li>
+    
+                         <li>
+                            <input type="radio" id="radio-4" name="radio-accordion" />
+                              <label for="radio-4">Point Withdraw Status</label>
+                                <div class="content" >
+                                    <ion-grid> 
+                                      <ion-row>
+                                        <ion-col col-12>
+                                        <ion-grid style="padding:0px;" *ngFor="let point of points "  > 
+                                              <ion-row class="score-table">
+                                                 
+													<ion-col col-12>
+											<p *ngIf="point.status==0">	Pending </p>
+											<p *ngIf="point.status==1">	Completed </p>
+											<p *ngIf="point.status==2">	Declined </p>
+
+												 </ion-col>  
+
+												 <ion-col col-8 class="point-content">
+                                                    {{point.created_at| slice:0:10 | date:"dd/MM/yy"}}
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score" (click)="pointwithdraw(point)">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid>
+                                        </ion-col>                                    
+                                      </ion-row>
+                                    </ion-grid>                             
+                                </div>
+                         </li>
+    
+                         <li>
+                            <input type="radio" id="radio-5" name="radio-accordion" />
+                              <label for="radio-5">Cancel Contest</label>
+                                <div class="content" >
+                                    <ion-grid> 
+                                      <ion-row>
+                                        <ion-col col-12>
+                                        <ion-grid style="padding:0px;" *ngFor="let cancel_contest of cancel_contests "  > 
+                                              <ion-row class="score-table">
+                                                  
+												  	<ion-col col-12>
+												   {{cancel_contest.team_1}} Vs {{cancel_contest.team_2}} 
+
+												 </ion-col>  
+												  
+												  <ion-col col-8 class="point-content">
+                                                   {{cancel_contest.contest_enterance}} 
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score" (click)="cancelcontest(cancel_contest)">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid>
+                                        
+										
+										
+										
+										</ion-col>                                    
+                                      </ion-row>
+                                    </ion-grid>                             
+                                </div>
+                         </li>
+    
+                         <li>
+                            <input type="radio" id="radio-6" name="radio-accordion" />
+                              <label for="radio-6">Abandon Match </label>
+                                <div class="content" >
+                                    <ion-grid> 
+                                      <ion-row>
+                                        <ion-col col-12>
+										<ion-grid style="padding:0px;" *ngFor="let abandon of abandons "  > 
+                                              <ion-row class="score-table">
+                                                 	<ion-col col-12>
+												  {{abandon.team_1}} Vs {{abandon.team_2}} 
+
+												 </ion-col> 
+
+
+												 <ion-col col-8 class="point-content">
+                                                    {{abandon.contest_enterance}} 
+                                                  </ion-col>
+                                                  <ion-col col-4 class="score" (click)="abandonmatch(abandon)">
+                                                    Details
+                                                  </ion-col>                  
+                                              </ion-row>                  
+                                          </ion-grid>
+										
+										
+                                        
+                                        </ion-col>                                    
+                                      </ion-row>
+                                    </ion-grid>                             
+                                </div>
+                         </li>
+                
+             
+                         
+                    </ul>
+                </div>
+    
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+    
+    
+
+</ion-content>

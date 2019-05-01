@@ -1,0 +1,59 @@
+page-rank-details {
+    .toolbar-background-md
+    {
+        background: none !important;
+    }
+    .header-md::after
+    {
+        background-image: none !important;
+    }
+    .toolbar-title-md
+    {
+        color:#000 !important;
+    }
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .rank_modal
+    {
+        margin-top:150px;
+    }
+    .rank_head
+    {
+        background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+    .rank_heading
+
+    {
+        color: #fff;
+        margin-top: 5px !important;
+        margin-bottom: 0px;
+    }
+    .prize_pool h2
+    {
+        margin-bottom: 5px;
+        margin-top: 5px !important;
+    }
+    .prize_pool p
+    {
+        text-align: center;
+        margin: 0px;
+    }
+    .rank-view
+    {
+        padding: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+    .rank
+    {
+        font-weight: 600;
+        padding: 0px;
+    }
+    .amount
+    {
+        text-align: right;
+        padding: 0px;
+    }
+    
+}

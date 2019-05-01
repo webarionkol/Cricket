@@ -1,0 +1,257 @@
+<!--
+  Generated template for the DasbordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{site_name}}</ion-title>
+        <button ion-button>
+          <ion-icon name="notifications"></ion-icon>
+        </button>
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="match_home">
+  
+  <ion-segment class="SwipedTabs-tabs">
+    <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+    [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+      {{tab}}
+</ion-segment-button>
+  </ion-segment>  
+
+  <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+  
+    <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+                (ionSlideWillChange)="updateIndicatorPosition()"
+                (ionSlideDidChange)="updateIndicatorPosition()"
+                (pan)="updateIndicatorPosition()"
+                [pager]="false"
+          >
+
+       
+      <ion-slide class="order_swipe_tab">
+
+          <ion-row>
+              <ion-col col-12>
+                <ion-slides pager>
+                  <ion-slide>
+                    
+					 <img *ngIf="banner_1==1" src="{{banner_url+'/banner1.jpg'}}">
+					<img *ngIf="banner_1==0" src="assets/imgs/mobile-b.jpg">
+                  </ion-slide>
+                  <ion-slide>
+                    <img *ngIf="banner_2==1" src="{{banner_url+'/banner2.jpg'}}">
+					<img *ngIf="banner_2==0" src="assets/imgs/mobile-b.jpg">
+                  </ion-slide>
+                  <ion-slide>
+					<img *ngIf="banner_3==1" src="{{banner_url+'/banner3.jpg'}}">
+					<img *ngIf="banner_3==0" src="assets/imgs/mobile-b.jpg">
+                  </ion-slide>
+                </ion-slides>
+            </ion-col>
+          </ion-row>
+
+          <!--<ion-row>
+            <ion-col col-6>
+                <h2 class="tab_2" (click)="openModal()">Live</h2>
+          </ion-col>
+          <ion-col col-6>
+            <h2 class="tab_2" (click)="openModal()">Result</h2>
+        </ion-col>
+        </ion-row>-->
+
+    
+          <ion-row>
+            <ion-col col-12>
+                <h2 class="heading">Select Match</h2>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+
+            <ion-list>            
+
+
+
+
+
+                  <ion-item class="match_div" *ngFor="let match of matchlist" (click)="Goto_contest(match,times_clear)">
+                      
+                          <ion-row>
+                            <ion-col col-12 class="team_name">
+							<p>{{ match.team_1 }} <span>VS </span>{{ match.team_2 }}</p>
+                          </ion-col>
+                          <ion-col col-4>
+                            <ion-thumbnail item-start class="match_thumbnail">
+                                <img *ngIf="match.team1_image" src="{{site_url+'/'+match.team1_image}}">
+                              
+                                <img  *ngIf="!match.team1_image " src="assets/imgs/default.png">
+                               
+                            </ion-thumbnail>
+                        </ion-col>
+                          <ion-col col-4>
+                          <h2><img src="assets/imgs/vs.png"></h2>
+                        </ion-col>
+                          <ion-col col-4>
+                            <ion-thumbnail item-end class="match_thumbnail">
+                              <img *ngIf="match.team2_image" src="{{site_url+'/'+match.team2_image}}">
+                              
+                                <img  *ngIf="!match.team2_image " src="assets/imgs/default.png">
+                            </ion-thumbnail>  
+						</ion-col>    
+                          <ion-col col-6>
+                         
+							<p class="match_time" id="demo{{ match.unique_id }}" > <ion-icon name="clock"></ion-icon>   </p>
+                             </ion-col>
+                          <ion-col col-6>
+                              <p class="match_click"> Click Here</p>
+                            </ion-col>
+                      </ion-row>    
+                  </ion-item>
+
+                 <!-- <ion-item class="match_div" (click)="Goto_contest()">
+                      <p>T20 League</p>
+                      
+                      <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>
+                  
+                      <ion-thumbnail item-end class="match_thumbnail">
+                        <img src="assets/imgs/Tshwane Spartans.jpg">
+                      </ion-thumbnail>  
+                      <h2>VS</h2>  
+                      
+                      <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>     
+                  </ion-item>
+
+                  <ion-item class="match_div" (click)="Goto_contest()">
+                      <p>T20 League</p>
+                      
+                      <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>
+                  
+                      <ion-thumbnail item-end class="match_thumbnail">
+                        <img src="assets/imgs/Tshwane Spartans.jpg">
+                      </ion-thumbnail>  
+                         <h2>VS</h2>  
+                      
+                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>     
+                  </ion-item>
+
+                  <ion-item class="match_div" (click)="Goto_contest()">
+                        <p>T20 League</p>
+                      
+                         <ion-thumbnail item-start class="match_thumbnail">
+                             <img src="assets/imgs/Jozi Stars.jpg">
+                         </ion-thumbnail>
+                     
+                         <ion-thumbnail item-end class="match_thumbnail">
+                           <img src="assets/imgs/Tshwane Spartans.jpg">
+                         </ion-thumbnail>  
+                         <h2>VS</h2>  
+                      
+                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p> 
+                  </ion-item>-->
+             
+            </ion-list>
+
+          </ion-col>      
+        </ion-row>
+
+
+      </ion-slide>
+
+      <ion-slide class="order_swipe_tab">
+          <ion-row>
+              <ion-col col-12>
+                  <h2 class="heading">There is no match</h2>
+            </ion-col>
+          </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+            <ion-list>
+             
+               
+
+                 <!-- <ion-item class="match_div" (click)="Goto_contest()">
+                      
+                            <p>T20 League</p>
+                         
+                            <ion-thumbnail item-start class="match_thumbnail">
+                                <img src="assets/imgs/Jozi Stars.jpg">
+                            </ion-thumbnail>
+                        
+                            <ion-thumbnail item-end class="match_thumbnail">
+                              <img src="assets/imgs/Tshwane Spartans.jpg">
+                            </ion-thumbnail>   
+                            <h2>VS</h2>  
+                         
+                            <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>
+                             
+                  </ion-item>
+
+                  <ion-item class="match_div" (click)="Goto_contest()">
+                      <p>T20 League</p>
+                      
+                      <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>
+                  
+                      <ion-thumbnail item-end class="match_thumbnail">
+                        <img src="assets/imgs/Tshwane Spartans.jpg">
+                      </ion-thumbnail>  
+                         <h2>VS</h2>  
+                      
+                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>     
+                  </ion-item>
+
+                  <ion-item class="match_div" (click)="Goto_contest()">
+                      <p>T20 League</p>
+                      
+                      <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>
+                  
+                      <ion-thumbnail item-end class="match_thumbnail">
+                        <img src="assets/imgs/Tshwane Spartans.jpg">
+                      </ion-thumbnail>  
+                         <h2>VS</h2>  
+                      
+                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>     
+                  </ion-item>
+
+                  <ion-item class="match_div" (click)="Goto_contest()">
+                        <p>T20 League</p>
+                      
+                        <ion-thumbnail item-start class="match_thumbnail">
+                            <img src="assets/imgs/Jozi Stars.jpg">
+                        </ion-thumbnail>
+                    
+                        <ion-thumbnail item-end class="match_thumbnail">
+                          <img src="assets/imgs/Tshwane Spartans.jpg">
+                        </ion-thumbnail>   
+                         <h2>VS</h2>  
+                      
+                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p> 
+                  </ion-item>-->
+             
+            </ion-list>
+          </ion-col>      
+        </ion-row>
+      </ion-slide>
+      
+  </ion-slides>
+ 
+</ion-content>

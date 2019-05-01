@@ -1,0 +1,38 @@
+page-bat {
+.checkbox-icon
+    {
+        display: none;
+    }
+    .select_body
+    {
+        padding-left: 0px;
+    }
+    .player_img
+    {
+        padding: 5px;
+    }
+    .player_img img
+    {
+        width:60px;
+        height: 60px;
+    }
+    .player_credit
+    {
+        margin:0px !important;
+        padding-right: 0px !important;
+    }
+    .add-icon
+    {
+        float: right;
+        font-size: 25px;
+        color: #05800a;
+		margin-top: -20px;
+    }
+    .minus-icon
+    {
+        float: right;
+        font-size: 25px;
+        color: #b50202 !important;
+		margin-top: -20px;
+    }
+}

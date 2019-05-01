@@ -1,0 +1,262 @@
+<!--
+  Generated template for the PlaypointsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>{{site_name}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="select_player">
+    
+        <ion-grid>
+            <ion-row class="select_header">
+                <ion-col col-2>
+                  <h2>Players</h2>
+                </ion-col>
+                <ion-col col-6>
+                    <h2></h2>
+                </ion-col>
+                
+                <ion-col col-2>
+                    <h2>Captain</h2>       
+                </ion-col>
+                <ion-col col-2>
+                    <h2>Vice Captain</h2>       
+                </ion-col>
+              </ion-row>  
+            <ion-row class="select_body" *ngFor="let wk of wk_list2;let i=index">
+                <ion-col col-2 class="player_img">
+                    <ion-thumbnail item-start class="match_thumbnail">
+                         <img *ngIf="wk.player_image" src="{{player_url+'/'+wk.player_image}}">
+						<img  *ngIf="!wk.player_image" src="assets/imgs/profile.png">
+                    </ion-thumbnail>
+                </ion-col>
+				 <ion-col col-6 class="player_name">
+                   <p>{{wk.player_name}}</p>
+                   <p> {{wk.player_team_name}} </p>
+				    <p id="c_{{wk.player_id}}" class="captain" *ngIf="wk.player_id!=relationship" [ngStyle]="{'display': 'none'}">    <img src="assets/imgs/2x.png"></p> 
+				    <p id="c_{{wk.player_id}}" class="captain" *ngIf="wk.player_id==relationship" >    <img src="assets/imgs/2x.png"></p> 
+				<p id="vc_{{wk.player_id}}" class="vicecaptain" *ngIf="wk.player_id!=relationship1" [ngStyle]="{'display': 'none'}">   <img src="assets/imgs/1x.png"></p>
+				<p id="vc_{{wk.player_id}}" class="vicecaptain" *ngIf="wk.player_id==relationship1">   <img src="assets/imgs/1x.png"></p>
+				
+                </ion-col>
+                
+               <ion-col col-4>
+                <ion-list >
+                    <ion-row >
+                        <ion-col col-6 class="player_credit player_captain">
+                          <ion-item class="radio_div" radio-group [(ngModel)]="relationship" >
+                            <ion-label>C</ion-label>
+                            <ion-radio  value="{{wk.player_id}}" [checked]=wk.minus (ionSelect)="radio_select('cap',wk,$event)"  ></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col col-6 class="player_credit player_vicecaptain">
+                            <ion-item class="radio_div" radio-group [(ngModel)]="relationship1" >
+                              <ion-label>VC</ion-label>
+                              <ion-radio  value="{{wk.player_id}}" [checked]=wk.minus1 (ionSelect)="radio_select('vcap',wk,$event)" ></ion-radio>
+                            </ion-item>
+                        </ion-col>
+                        
+                    </ion-row>
+                  </ion-list>
+                </ion-col>
+
+
+
+              </ion-row> 
+			  
+			  
+			   <ion-row class="select_body" *ngFor="let bat of bat_list2;let i=index"  >
+                <ion-col col-2 class="player_img">
+                    <ion-thumbnail item-start class="match_thumbnail">
+                         <img *ngIf="bat.player_image" src="{{player_url+'/'+bat.player_image}}">
+						<img  *ngIf="!bat.player_image" src="assets/imgs/profile.png">
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col col-6 class="player_name">
+                   <p>{{bat.player_name}}</p>
+                   <p> {{bat.player_team_name}} </p>
+				      <p id="c_{{bat.player_id}}"  class="captain" *ngIf="bat.player_id!=relationship" [ngStyle]="{'display': 'none'}">    <img src="assets/imgs/2x.png"></p> 
+				      <p id="c_{{bat.player_id}}"  class="captain" *ngIf="bat.player_id==relationship">    <img src="assets/imgs/2x.png"></p> 
+				<p id="vc_{{bat.player_id}}" class="vicecaptain" *ngIf="bat.player_id!=relationship1" [ngStyle]="{'display': 'none'}">   <img src="assets/imgs/1x.png"></p>
+				<p id="vc_{{bat.player_id}}" class="vicecaptain" *ngIf="bat.player_id==relationship1" >   <img src="assets/imgs/1x.png"></p>
+              
+                </ion-col>
+                 <ion-col col-4>
+                <ion-list >
+                    <ion-row >
+                        <ion-col col-6 class="player_credit player_captain">
+                          <ion-item class="radio_div" radio-group [(ngModel)]="relationship" >
+                            <ion-label>C</ion-label>
+                            <ion-radio  value="{{bat.player_id}}" [checked]=bat.minus (ionSelect)="radio_select('cap',bat,$event)"  ></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col col-6 class="player_credit player_vicecaptain">
+                            <ion-item class="radio_div" radio-group [(ngModel)]="relationship1" >
+                              <ion-label>VC</ion-label>
+                              <ion-radio  value="{{bat.player_id}}" [checked]=bat.minus1 (ionSelect)="radio_select('vcap',bat,$event)" ></ion-radio>
+                            </ion-item>
+                        </ion-col>
+                        
+                    </ion-row>
+                  </ion-list>
+                </ion-col>
+
+
+
+              </ion-row> 
+			 
+			  <ion-row class="select_body" *ngFor="let ar of ar_list2;let i=index">
+                <ion-col col-2 class="player_img">
+                    <ion-thumbnail item-start class="match_thumbnail">
+                         <img *ngIf="ar.player_image" src="{{player_url+'/'+ar.player_image}}">
+						<img  *ngIf="!ar.player_image" src="assets/imgs/profile.png">
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col col-6 class="player_name">
+                   <p>{{ar.player_name}}</p>
+                   <p> {{ar.player_team_name}} </p>
+				  <p id="c_{{ar.player_id}}"  class="captain" *ngIf="ar.player_id!=relationship" [ngStyle]="{'display': 'none'}">    <img src="assets/imgs/2x.png"></p> 
+				  <p id="c_{{ar.player_id}}"  class="captain" *ngIf="ar.player_id==relationship" >    <img src="assets/imgs/2x.png"></p> 
+				<p id="vc_{{ar.player_id}}" class="vicecaptain" *ngIf="ar.player_id!=relationship1" [ngStyle]="{'display': 'none'}">   <img src="assets/imgs/1x.png"></p>
+				<p id="vc_{{ar.player_id}}" class="vicecaptain" *ngIf="ar.player_id==relationship1">   <img src="assets/imgs/1x.png"></p>
+               
+                </ion-col>
+                  <ion-col col-4>
+                <ion-list >
+                    <ion-row >
+                        <ion-col col-6 class="player_credit player_captain">
+                          <ion-item class="radio_div" radio-group [(ngModel)]="relationship" >
+                            <ion-label>C</ion-label>
+                            <ion-radio  value="{{ar.player_id}}" [checked]=ar.minus (ionSelect)="radio_select('cap',ar,$event)"  ></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col col-6 class="player_credit player_vicecaptain">
+                            <ion-item class="radio_div" radio-group [(ngModel)]="relationship1" >
+                              <ion-label>VC</ion-label>
+                              <ion-radio  value="{{ar.player_id}}" [checked]=ar.minus1 (ionSelect)="radio_select('vcap',ar,$event)" ></ion-radio>
+                            </ion-item>
+                        </ion-col>
+                        
+                    </ion-row>
+                  </ion-list>
+                </ion-col>
+
+
+
+              </ion-row>
+			 
+			  <ion-row class="select_body" *ngFor="let bow of bow_list2;let i=index">
+                <ion-col col-2 class="player_img">
+                    <ion-thumbnail item-start class="match_thumbnail">
+                        <img *ngIf="bow.player_image" src="{{player_url+'/'+bow.player_image}}">
+						<img  *ngIf="!bow.player_image" src="assets/imgs/profile.png">
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col col-6 class="player_name">
+                   <p>{{bow.player_name}}</p>
+                   <p> {{bow.player_team_name}} </p>
+				  <p id="c_{{bow.player_id}}"  class="captain" *ngIf="bow.player_id!=relationship"  [ngStyle]="{'display': 'none'}">    <img src="assets/imgs/2x.png"></p> 
+				  <p id="c_{{bow.player_id}}"  class="captain" *ngIf="bow.player_id==relationship" >    <img src="assets/imgs/2x.png"></p> 
+				<p id="vc_{{bow.player_id}}" class="vicecaptain" *ngIf="bow.player_id!=relationship1" [ngStyle]="{'display': 'none'}">   <img src="assets/imgs/1x.png"></p>
+				<p id="vc_{{bow.player_id}}" class="vicecaptain" *ngIf="bow.player_id==relationship1" >   <img src="assets/imgs/1x.png"></p>
+               
+                </ion-col>
+                 <ion-col col-4>
+                <ion-list >
+                    <ion-row >
+                        <ion-col col-6 class="player_credit player_captain">
+                          <ion-item class="radio_div" radio-group [(ngModel)]="relationship" >
+                            <ion-label>C</ion-label>
+                            <ion-radio  value="{{bow.player_id}}" [checked]=bow.minus (ionSelect)="radio_select('cap',bow,$event)"  ></ion-radio>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col col-6 class="player_credit player_vicecaptain">
+                            <ion-item class="radio_div" radio-group [(ngModel)]="relationship1" >
+                              <ion-label>VC</ion-label>
+                              <ion-radio  value="{{bow.player_id}}" [checked]=bow.minus1 (ionSelect)="radio_select('vcap',bow,$event)" ></ion-radio>
+                            </ion-item>
+                        </ion-col>
+                        
+                    </ion-row>
+                  </ion-list>
+                </ion-col>
+
+
+
+              </ion-row>
+    
+          <!--     <ion-row class="select_body">
+                  <ion-col col-2 class="player_img">
+                      <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="../../assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>
+                  </ion-col>
+                  <ion-col col-6 class="player_name">
+                     <p>Bowler</p>
+                     <p> Team </p>
+                  </ion-col>
+                  
+                  <ion-col col-2 class="player_credit player_captain">
+                    <span>C</span>
+                 </ion-col>
+                 <ion-col col-2 class="player_credit player_vicecaptain">
+                    <span>VC</span>
+                 </ion-col>
+                </ion-row>
+    
+                <ion-row class="select_body">
+                    <ion-col col-2 class="player_img">
+                        <ion-thumbnail item-start class="match_thumbnail">
+                            <img src="../../assets/imgs/Jozi Stars.jpg">
+                        </ion-thumbnail>
+                    </ion-col>
+                    <ion-col col-6 class="player_name">
+                       <p>Bowler</p>
+                       <p> Team </p>
+                    </ion-col>
+                    
+                    <ion-col col-2 class="player_credit player_captain">
+                      <span>C</span>
+                   </ion-col>
+                   <ion-col col-2 class="player_credit player_vicecaptain">
+                      <span>VC</span>
+                   </ion-col>
+                  </ion-row>-->
+    
+    
+    
+        </ion-grid>
+    
+    </ion-content>
+  
+  <ion-footer class="player_select_footer">
+        
+                <ion-grid>
+                
+                        <ion-row>                      
+                            <ion-col col-3>
+
+                            </ion-col>
+                            <ion-col col-6 class="points_footer">
+                                <button [disabled]="!isenabled" (click)="team_submit()">Submit</button>
+                            </ion-col>
+                          </ion-row>       
+                
+                    </ion-grid>
+        
+        </ion-footer>
+  
+  
+      
+  

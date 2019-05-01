@@ -1,0 +1,160 @@
+page-select-team {
+    .match_grid
+    {
+        background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+    .div-back
+    {
+        background: #fff;
+        border-radius: 5px;
+    }
+    .div-left
+    {
+
+    }
+    .div-left p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+    }
+    .div-left p span
+    {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    .div-right
+    {
+        text-align: right;
+    }
+    .div-right p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+        color: #05880a;
+    }
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .header-md::after
+    {
+        background-image: none !important;
+    }
+    .toolbar-background
+    {
+        height: 101% !important;
+    }
+    .myteam_div
+    {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .team_header
+    {
+
+    }
+    .team_head
+    {
+        border-bottom: 1px solid #ccc;
+        padding: 15px 0px;
+    }
+    .team_head h2
+    {
+        font-size: 18px;
+        color: #5a5757;
+        margin: 0px;
+        padding: 0px 10px;
+    }
+    .team_cap
+    {
+        padding: 15px 10px;
+        border-right: 1px solid #ccc;
+    }  
+    .team_cap h4
+    {
+        font-size: 14px;
+        color: #bd7407;
+        margin: 0px;
+    }
+    .team_cap h2
+    {
+        margin: 0px;
+        font-size: 16px;
+        color: #565353;
+    }
+    .team_vice
+    {
+        padding: 15px 10px;
+    }
+    .team_vice h4
+    {
+        font-size: 14px;
+        color: #0a9020;
+        margin: 0px;
+    }
+    .team_vice h2
+    {
+        margin: 0px;
+        font-size: 16px;
+        color: #565353;
+    }
+   .team_action
+   {
+    border-top: 1px solid #ccc;
+   }
+    .team_action h4
+    {
+        font-size: 14px;
+        color: #484848;
+        margin: 0px;
+        text-align: left;
+        padding: 15px 0px 5px;
+    }
+    .team_action ion-icon
+    {
+        color: #3b2e86;
+        margin-right: 5px;
+    }
+    .radio-md
+    {
+        width: 3%;
+           margin: 3px 15px 0px 0 !important;
+        float: left;
+    }
+    .item-radio-checked.item-md ion-label .myteam_div
+    {
+        border: 2px solid #4CAF50 !important;
+    }
+    .radio-icon
+    {
+       
+    }
+    .player_select_footer
+    {
+
+        background: #565555;
+    }
+    .point_fo_left
+    {
+        background: #033676;
+        padding: 10px 0px;
+    }
+    .point_fo_right
+    {
+        background: #027a06;
+        padding: 10px 0px;
+    }
+    .point_fo_left p
+    {
+       margin: 0px;
+       color:#fff;
+       text-align: center;
+    }
+    .point_fo_right p
+    {
+        margin: 0px;
+        color:#fff;
+        text-align: center;
+    }
+}

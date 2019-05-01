@@ -1,0 +1,240 @@
+<!--
+  Generated template for the BankPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>bank</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row *ngIf="mobilestatus =='0' || panstatus=='0' ">
+          <ion-col col-12>
+            <ion-list class="inner_page">
+
+              
+
+			  <ion-item class="item_div">
+                    <ion-thumbnail item-start class="bank-icon">
+                          <img src="assets/imgs/mail-box.png">
+                    </ion-thumbnail>
+                    <h2>VERIFY BANK ACCOUNT</h2>
+                    <p style="font-size: 12px;">(verify your account to widthdraw winnings)</p>
+                  </ion-item>
+
+                  <ion-item class="item_div alert-div">
+                      <ion-thumbnail item-start class="alert-icon">
+                            <img src="assets/imgs/mail-box.png">
+                      </ion-thumbnail>
+                      <p>To transfer winnings to your bankDetails account,please complete the steps mentioned below:</p>
+                    </ion-item>
+
+                    <ion-item class="item_div alert-div">
+                        <ion-thumbnail item-start class="alert-icon">
+
+                        </ion-thumbnail>
+
+                        <p>&#x0002E; Verify your mobile number</p>
+                        <p>&#x0002E; Verify your email id</p>
+                        <p>&#x0002E; Verify your PAN card</p>
+                      </ion-item>
+					  
+					  
+					
+					  
+
+
+
+            </ion-list>
+          </ion-col>
+
+        </ion-row>
+        
+		
+		<ion-row *ngIf=" mobilestatus =='1' &&  panstatus =='1'  &&  banstatus =='2' || banstatus==0 ">
+	<!--	<ion-row> -->
+		
+       <p style="color:green" *ngIf="banstatus==0"> Bank Verification is under Process</p>
+       <p style="color:green" *ngIf="banstatus==1"> Bank Verification is verified</p>
+		<ion-col col-12>
+		
+		 <form [formGroup]="bankValidate" >
+            <ion-list class="inner_page">
+
+		
+		
+		<ion-item class="login_input">
+                 <ion-label position="floating" >Bank Name*</ion-label>
+                <ion-input type="text" formControlName="bankname"  value="{{bankname}}"  ></ion-input>
+               
+
+              </ion-item>
+			  
+			     
+                  <ion-item *ngIf="bankValidate.controls.bankname.hasError('required') && bankValidate.controls.bankname.touched" >
+                      <p style="color: #f70505;"> Please Enter Bank Name</p>
+                  </ion-item>
+                    <ion-item *ngIf="bankValidate.controls.bankname.hasError('pattern') && bankValidate.controls.bankname.touched" >
+                      <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+                  </ion-item>
+			  
+			  
+			  
+			  
+			  <ion-item class="login_input">
+                 <ion-label position="floating" >Branch Name*</ion-label>
+                <ion-input type="text" formControlName="branchname"   value="{{branchname}}"  ></ion-input>
+               
+
+              </ion-item>
+			  
+			    <ion-item *ngIf="bankValidate.controls.branchname.hasError('required') && bankValidate.controls.branchname.touched" >
+                      <p style="color: #f70505;"> Please Enter Branch Name</p>
+                  </ion-item>
+                    <ion-item *ngIf="bankValidate.controls.branchname.hasError('pattern') && bankValidate.controls.branchname.touched" >
+                      <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+                  </ion-item>
+			  
+			  
+			  <ion-item class="login_input">
+                 <ion-label position="floating" >Account No*</ion-label>
+                <ion-input type="text" formControlName="acc_no"   value="{{acc_no}}"  ></ion-input>
+               
+
+              </ion-item>
+			  
+			   <ion-item *ngIf="bankValidate.controls.acc_no.hasError('required') && bankValidate.controls.acc_no.touched" >
+                      <p style="color: #f70505;"> Please Enter Account Number</p>
+                  </ion-item>
+                    <ion-item *ngIf="bankValidate.controls.acc_no.hasError('maxLength') && bankValidate.controls.acc_no.touched" >
+                      <p style="color: #f70505;">Please Enter Valid Account Number</p>
+                  </ion-item>
+			  
+			  
+			  
+			  
+			  <ion-item class="login_input">
+                 <ion-label position="floating" >Account Holder Name*</ion-label>
+                <ion-input type="text" formControlName="acc_holder_name"  value="{{acc_holder_name}}"  ></ion-input>
+               
+
+              </ion-item>
+			  
+			  
+			  <ion-item *ngIf="bankValidate.controls.acc_holder_name.hasError('required') && bankValidate.controls.acc_holder_name.touched" >
+                      <p style="color: #f70505;"> Please Enter Account Holder Name</p>
+                  </ion-item>
+                    <ion-item *ngIf="bankValidate.controls.acc_holder_name.hasError('maxLength') && bankValidate.controls.acc_holder_name.touched" >
+                      <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+                  </ion-item>
+			  
+			  
+			  
+			  <ion-item class="login_input">
+                 <ion-label position="floating" >IFSC/Swift Code*</ion-label>
+                <ion-input type="text" formControlName="ifsc"   value="{{ifsc}}"></ion-input>
+               
+
+              </ion-item>
+			  
+			  
+			  
+			  <ion-item *ngIf="bankValidate.controls.ifsc.hasError('required') && bankValidate.controls.ifsc.touched" >
+                      <p style="color: #f70505;"> Please IFSC Code</p>
+                  </ion-item>
+                   
+			  
+			  
+		
+		
+		 <div class="login_input">
+             
+
+              <button  [disabled]="!bankValidate.valid" (click)="bank_post()"  ion-button color="dark"  class="button_left">SUBMIT FOR VERIFICATION</button>
+              </div>
+			  
+			  
+			   </ion-list>
+         </form>
+
+
+		 </ion-col>
+		
+		</ion-row>
+		
+		<ion-row *ngIf="banstatus =='1'">
+		
+		 <ion-col col-12>
+            <ion-list class="inner_page">
+
+              
+
+			  <ion-item class="item_div">
+                    <ion-thumbnail item-start class="bank-icon">
+                          <img src="assets/imgs/mail-box.png">
+                    </ion-thumbnail>
+                    <h2>Bank Account is Verified </h2>
+                    <p style="font-size: 12px;"></p>
+                  </ion-item>
+
+                  <ion-item class="item_div alert-div">
+                      <ion-thumbnail item-start class="alert-icon">
+                            <img src="assets/imgs/mail-box.png">
+                      </ion-thumbnail>
+                      <p>Thank You For verifiying Mobile,Pan and Bank Details. Now you can make withdraw from your wallet <p>
+                    </ion-item>
+
+                    <ion-item class="item_div alert-div">
+                        <ion-thumbnail item-start class="alert-icon">
+
+                        </ion-thumbnail>
+
+                      <!--  <p>&#x0002E; Verify your mobile number</p>
+                        <p>&#x0002E; Verify your email id</p>
+                        <p>&#x0002E; Verify your PAN card</p> -->
+                      </ion-item>
+					  
+					  
+					
+					  
+
+
+
+            </ion-list>
+          </ion-col>
+		
+		
+		
+		
+		
+		
+		
+		</ion-row>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+      </ion-grid>
+</ion-content>

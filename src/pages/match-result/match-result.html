@@ -1,0 +1,163 @@
+<!--
+  Generated template for the MatchResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{scores.team_1}} Vs {{scores.team_2}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid class="match_grid">
+    <ion-row class="div-back">
+      <ion-col col-6 class="div-left">
+          <p>{{scores.team_1}}<span>VS</span>{{scores.team_2}}</p>
+      </ion-col>
+      <ion-col col-6 class="div-right">
+          <p>Status:{{mstatus}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="scorecard-div">
+      <ion-row>
+       <!--
+      <ion-col col-12 class="score-card">
+            <p>SCORECARD</p>
+        </ion-col>
+        <ion-col col-2>
+            <p>NZ</p>
+        </ion-col>
+        <ion-col col-4>
+            <p style="border-right:1px solid #000;">157-8 (38.5)</p>
+        </ion-col>
+        <ion-col col-2>
+            <p>IND</p>
+        </ion-col>
+        <ion-col col-4>
+            <p>160-2 (35.6)</p>
+        </ion-col>
+
+      -->
+        <ion-col col-12 class="winteam">
+            <p *ngIf="scores.match_score!=''">{{ scores.match_score }}</p>
+            <p *ngIf="scores.match_score==''">Will Be Updated</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="viewplayer-div">
+        <ion-row>
+          <ion-col col-12 class="View-player" (click)="Goto_playpoint()">
+              <p>View Player Status <ion-icon name="ios-arrow-forward" style="float:right;"></ion-icon></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div *ngIf="scores.user_contest!='' ">
+
+
+
+      <ion-grid class="contest-view"  *ngFor="let contest of contests" >
+          <ion-row style="border-bottom:1px solid #e3e0e0;">
+            <ion-col col-8 class="contest">
+                <h4 *ngIf="contest.is_practice_name != '1'">{{contest.contest_name}}</h4>
+
+                <h4 *ngIf="contest.is_practice_name == '1'">PRACTICE CONTEST</h4>
+                <p>Winner</p>
+            </ion-col>
+            <ion-col col-4 class="entry">
+                <p>Entry</p>
+                <h4> &#8377;{{ contest.enterence_amount }}</h4>
+
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="border-bottom:1px solid #e3e0e0;">
+              <ion-col col-4 class="joined">
+                  <h4>JOINED WITH</h4>
+                  <p>Team {{ contest.team_no }}</p>
+              </ion-col>
+              <ion-col col-4 class="points">
+                  <h4>POINTS</h4>
+                  <p>{{ contest.points }}</p>
+              </ion-col>
+
+              <ion-col col-4 class="points">
+                  <h4>RANK</h4>
+                  <p>#{{contest.rank }}</p>
+              </ion-col>
+
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 class="view-leader" (click)="Goto_leaderboard(contest.contest_id)">
+                    <p>View leaderboard<ion-icon name="ios-arrow-forward" style="float:right;"></ion-icon></p>
+                </ion-col>
+              </ion-row>
+      </ion-grid>
+    </div>
+
+
+
+
+
+
+
+
+    <ion-grid class="contest-view"  *ngIf="scores.user_contest =='' "  >
+     <!--
+      <ion-row style="border-bottom:1px solid #e3e0e0;">
+        <ion-col col-8 class="contest">
+            <h4 *ngIf="contest.is_practice_name != '1'">{{contest.contest_name}}</h4>
+
+            <h4 *ngIf="contest.is_practice_name == '1'">PRACTICE CONTEST</h4>
+            <p>Winner</p>
+        </ion-col>
+        <ion-col col-4 class="entry">
+            <p>Entry</p>
+            <h4> &#8377;0</h4>
+
+        </ion-col>
+      </ion-row>
+
+
+    -->
+
+      <ion-row style="border-bottom:1px solid #e3e0e0;">
+          <ion-col col-4 class="joined">
+            <!--
+              <h4>JOINED WITH</h4>
+              <p>Team 1</p>
+            -->
+          </ion-col>
+          <ion-col col-4 class="points">
+              <h4>There no contest </h4>
+
+          </ion-col>
+
+          <ion-col col-4 class="points">
+         <!--
+          <h4>RANK</h4>
+              <p>#54</p>
+        -->
+
+
+          </ion-col>
+
+        </ion-row>
+
+
+  </ion-grid>
+
+
+</ion-content>

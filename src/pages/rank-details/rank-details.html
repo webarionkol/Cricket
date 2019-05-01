@@ -1,0 +1,99 @@
+<!--
+  Generated template for the ContestModelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+  
+  
+  <ion-content padding class="rank_modal">
+
+      <ion-row class="rank_head">
+          <ion-col col-3>
+              <ion-buttons start>
+                  <button ion-button (click)="closeModal()" style="margin: 0px;"> CLOSE</button>
+                </ion-buttons>
+        </ion-col>
+          <ion-col col-9>
+              <h4 class="rank_heading"> WINNING BREAKUP</h4>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+          <ion-col col-12 class="prize_pool">
+              <h2 class="heading">Prize Pool</h2>
+              <p>{{winprize}}</p>
+        </ion-col>
+      </ion-row>
+  
+    <ion-row>
+      <ion-col col-12>
+  
+        <ion-list>            
+ 
+              <ion-item class="rank-view"  *ngFor="let prize of displayprize;let i =index">
+                  <ion-row>
+                      <ion-col col-6 class="rank" >                          
+                          <p> Rank:{{ displayrank[i] }} </p>
+                    </ion-col>
+                    <ion-col col-6 class="amount" >                        
+                        <p> {{ displayprize[i] }} </p>
+                  </ion-col>
+                  </ion-row>
+              </ion-item>
+
+              <!--<ion-item class="rank-view">
+                  <ion-row>
+                      <ion-col col-6 class="rank">                          
+                          <p>Rank: 1</p>
+                    </ion-col>
+                    <ion-col col-6 class="amount">                        
+                        <p>250</p>
+                  </ion-col>
+                  </ion-row>
+              </ion-item>
+
+              <ion-item class="rank-view">
+                  <ion-row>
+                      <ion-col col-6 class="rank">                          
+                          <p>Rank: 1</p>
+                    </ion-col>
+                    <ion-col col-6 class="amount">                        
+                        <p>250</p>
+                  </ion-col>
+                  </ion-row>
+              </ion-item>
+
+              <ion-item class="rank-view">
+                  <ion-row>
+                      <ion-col col-6 class="rank">                          
+                          <p>Rank: 1</p>
+                    </ion-col>
+                    <ion-col col-6 class="amount">                        
+                        <p>250</p>
+                  </ion-col>
+                  </ion-row>
+              </ion-item> -->
+         
+        </ion-list>
+
+        <ion-list>            
+            
+                        <ion-item >
+                            <ion-row>
+                                <ion-col col-12 class="rank">                          
+                                    <p>Note : content</p>
+                              </ion-col>
+                              
+                            </ion-row>
+                        </ion-item>
+          
+                   
+                  </ion-list>
+  
+      </ion-col>      
+    </ion-row>
+  
+  </ion-content>
+  

@@ -1,0 +1,61 @@
+page-profile {
+    ion-title
+    {
+        width:100% !important;
+    }
+    .pro_back
+    {
+        background-image: url(../assets/imgs/pro-back.png) !important;
+        height: 251px !important;
+    }
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .pro-img img
+    {
+        border-radius: 50%;
+       
+        border: 3px solid #fff;
+       
+    }
+    .pro-img
+    {
+        padding: 14px;
+    }
+    .pro_back h4
+    {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 5px;
+        margin-top: 0px;
+    }
+    .pro_back p
+    {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 5px;
+        margin-top: 0px;
+    }
+    .profile-details
+    {
+
+    }
+    .profile-details p
+    {
+        font-size: 16px;
+        color: #5a5a5a;
+        font-weight: 600;
+        margin: 5px 0px;
+    }
+    .pro-img ion-icon
+    {
+        float: right;
+        color: #fff;
+        font-size: 22px;
+    }
+    .change-password
+    {
+        color: #07599a !important;
+    }
+}

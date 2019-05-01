@@ -1,0 +1,149 @@
+page-match-result {
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .header-md::after
+    {
+        background-image:none !important;
+    }
+    .match_grid
+    {
+        background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+    .toolbar-background
+    {
+        height: 101% !important;
+    }
+    .div-back
+    {
+        background: #fff;
+        border-radius: 5px;
+    }
+    .div-left
+    {
+
+    }
+    .div-left p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+    }
+    .div-left p span
+    {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    .div-right
+    {
+        text-align: right;
+    }
+    .div-right p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+        color: #05880a;
+    }
+    .scorecard-div
+    {
+        border-bottom:1px solid #ccc;
+    }
+    .scorecard-div p
+    {
+        margin:0px;
+    }
+    .score-card p
+    {
+        color: #807e7e;
+    }
+    .winteam p
+    {
+        color: #807e7e;
+    }
+    .viewplayer-div
+    {
+        box-shadow: 0px 2px 1px #ccc;
+    }
+    .View-player p
+    {
+        color: #08439a;
+        font-weight: 600;
+        margin: 0px;
+    }
+    .contest-view
+    {
+        border: 1px solid #ccc;
+        margin: 15px;
+        width: 92%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px 1px #ccc;
+    }
+    .contest
+    {
+        padding: 10px 10px;
+    }
+    .contest h4
+    {
+        font-size: 12px;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    .contest p
+    {
+        margin: 0px;
+        color: #a5a3a3;
+    }
+    .entry
+    {
+        text-align: right;
+        padding: 10px 25px 10px 10px;
+    }
+    .entry h4
+    {
+        font-size: 14px;
+        margin-top: 5px !important;
+        margin-bottom: 0px !important;
+    }
+    .entry p
+    {
+        margin: 0px;
+        margin-top: 5px;
+        color: #a5a3a3;
+    }
+    .joined
+    {
+        padding: 10px 10px;
+    }
+    .joined h4
+    {
+        font-size: 14px;
+        margin-top: 5px !important;
+        color: #a5a3a3;
+        margin-bottom: 5px !important;
+    }
+    .joined p
+    {
+        margin: 0px;
+    }
+    .points
+    {
+        text-align: center;
+        padding: 10px 10px;
+    }
+    .points h4
+    {
+        font-size: 12px;
+        margin-top: 5px !important;
+        color: #a5a3a3;
+        margin-bottom: 5px !important;
+    }
+    .points p
+    {
+        margin: 0px;
+    }
+    .view-leader p
+    {
+        margin-bottom: 2px !important;
+        margin-top: 7px !important;
+    }
+}

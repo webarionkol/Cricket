@@ -1,0 +1,46 @@
+page-more {
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .more-div
+    {
+        padding: 5px 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .more-icon
+    {
+        min-width: 20px;
+        min-height: 20px;
+    }
+    .more-icon img
+    {
+        width: 20px;
+        height: 20px;
+    }
+    .more-arrow
+    {
+        min-width: 20px;
+        min-height: 20px;
+        margin: 0px;
+        text-align: right;
+        margin-right: 0px !important;
+    }
+    .more-arrow img
+    {
+        width: 20px;
+        height: 20px;
+    }
+    .more-arrow ion-icon
+    {
+        color: #969595;
+    }
+    .more-div p
+    {
+        color: #000;
+    }
+    .item-inner
+    {
+        padding-right:0px !important;
+    }
+}

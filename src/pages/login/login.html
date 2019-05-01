@@ -1,0 +1,93 @@
+
+
+
+
+
+<ion-content padding>
+  
+    
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 style="padding: 0px 35px;text-align:center;">
+        <br>
+        <br>
+        
+       <!--<img src="assets/imgs/logo.png">-->
+       <img style="height:80px" src="{{displaymatch}}">
+	   
+          <br>
+          <br>
+      </ion-col>
+    
+    </ion-row>
+  </ion-grid>
+  
+      <ion-grid>
+	  
+	    <form [formGroup]="LoginValidate" >
+	  
+          <ion-row>
+            <ion-col col-12>
+              <ion-list class="inner_page">
+                
+                <h2>Login</h2>
+
+                 <!--  <ion-col class="col-xs-6" (click)="fb_login()">                  
+                    <img  src="assets/imgs/fb.png">
+                  </ion-col> 
+
+                  <ion-col class="col-xs-6" (click)="google_login()">                  
+                    <img src="assets/imgs/google.png">
+                 </ion-col>   -->
+				 <p style="color:red">{{ error_msg }} </p>
+                  <ion-item class="login_input">
+                    
+                        <ion-input type="text" value="" placeholder="Email" formControlName="email" ></ion-input>
+                    </ion-item> 
+					
+					  <ion-item *ngIf="LoginValidate.controls.email.hasError('required') && LoginValidate.controls.email.touched" >
+                      <p style="color: #f70505;">Please fill the email field!</p>
+                  </ion-item> 
+
+				  <ion-item *ngIf="LoginValidate.controls.email.hasError('pattern') && LoginValidate.controls.email.touched" >
+                      <p style="color: #f70505;">Please enter valid email address !</p>
+                  </ion-item>
+					
+					
+					
+					
+					
+                
+                <ion-item class="login_input">
+  
+                  <ion-input type="password" value="" placeholder="Password" formControlName="pass" ></ion-input>
+                </ion-item>  
+				
+				 <ion-item *ngIf="LoginValidate.controls.pass.hasError('required') && LoginValidate.controls.pass.touched" >
+                      <p style="color: #f70505;">Password field is required !</p>
+                  </ion-item>
+				
+				
+
+                <p style="text-align: right;color: #2196F3;"> <a (click)="forgot_password()" >Forgot Password?</a></p>
+               
+                <button ion-button color="dark"  [disabled]="!LoginValidate.valid"     class="button_left" (click)="onSubmit()">Login</button>
+                
+                <p  style="text-align: center;">Don't have an account ? <a (click)="Goto_register()">Register</a> </p>
+                <!--<ion-item>
+                  <a color="dark">Forget Password</a>
+                  <a color="dark" (click)="Goto_register()">SignUp</a>
+                </ion-item>-->
+              
+                
+              </ion-list>
+            </ion-col>
+      
+          </ion-row>
+		  
+		  </form>
+        </ion-grid>
+  
+  </ion-content>
+  

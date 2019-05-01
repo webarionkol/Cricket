@@ -1,0 +1,184 @@
+page-filter-contest {
+ion-modal .show-page
+    {
+        padding-top: 170px !important;
+        background: #00000070 !important;
+    }
+    ion-footer
+    {
+        background: #7e7e7e;    
+    }
+    .points_footer button
+    {
+        background: #fff;
+        padding: 5px 10px;
+    }
+    .points_footer
+    {
+        text-align:center;
+    }
+	.contest_div
+{
+	padding: 15px 0px;
+	border-bottom: 1px solid #bcbbbb;
+}
+.contest_div_head
+{
+	padding: 0px;
+}
+.contest_page
+{
+	padding: 0px;
+}
+.contest_win
+{
+	text-align: center;
+	margin-bottom: 5px;
+}
+.contest_win p
+{
+	font-size: 13px;
+}
+.contest_win h2
+{
+ color: #3f2580;
+}
+.contest_entry
+{
+	text-align: right;
+}
+.contest_entry p
+{
+	font-size: 13px;
+}
+.contest_prize p
+{
+	font-size: 13px;
+}
+.contest_jion
+{
+	text-align: right;
+}
+.contest_jion button
+{
+	background: #593f9f;
+	border: 1px solid #40297f;
+	color: #fff;
+	padding: 4px 10px;
+	border-radius: 4px;
+}
+.contest_total_team
+{
+	text-align: right;
+}
+.contest_team p
+{
+	width:50%;
+	float: left;
+}
+.team_bar
+{
+	width: 100%;
+	height: 3px;
+	background: #b9b8b8;
+	margin-bottom: 6px;
+}
+.team_bar span
+{
+	
+	float: left;
+	height: 3px;
+	background: #d00303;
+}
+.create-team
+{
+  background: #033676;
+  padding: 10px 0px;
+}
+.view-team
+{
+  background: #027a06;
+  padding: 10px 0px;
+}
+.create-team p
+{
+margin: 0px;
+text-align: center;
+color:#fff;
+}
+.view-team p
+{
+margin: 0px;
+text-align: center;
+color: #fff;
+}
+.header-md::after
+{
+background-image:none !important;
+}
+.scroll-content
+{
+margin-bottom:50px;
+}
+.match_grid
+    {
+        background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+    .toolbar-background
+    {
+        height: 101% !important;
+    }
+    .div-back
+    {
+        background: #fff;
+        border-radius: 5px;
+    }
+    .div-left
+    {
+
+    }
+    .div-left p
+    {
+        margin: 0px;
+        padding: 5px 10px;
+    }
+    .div-left p span
+    {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    .div-right
+    {
+        text-align: right;
+    }
+    .div-right p
+    {
+        margin: 0px;
+        padding: 5px 10px;
+        color: #05880a;
+    }
+    .confirm-contest
+    {
+        background: #e3ab03;
+        color: #fff;
+        padding: 2px 5px;
+        border-radius: 50%;
+        font-size: 13px;
+    }
+    .multiple-contest
+    {
+        background: #039ce1;
+        color: #fff;
+        padding: 3px 4px;
+        border-radius: 50%;
+        font-size: 12px;
+    }
+    .my-contest
+    {
+      background: #ed6775;
+      color: #fff;
+      padding: 5px 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+}

@@ -1,0 +1,140 @@
+page-dasbord {
+.tab_2
+	{
+		font-size: 16px;
+		border: 1px solid #eb3a51;
+		background: #fc6075;
+		color: #fff;
+		padding: 2px;
+		margin: 0px;
+	}
+	.match_thumbnail
+	{
+		min-width: 50px !important;
+		min-height: 50px !important;
+	}
+	.match_thumbnail img
+	{
+		width: 50px !important;
+		height: 50px !important;
+	}
+	ion-slides
+	{
+		height: auto !important;
+	}
+	.SwipedTabs-indicatorSegment
+	{
+		-webkit-transition: 0.3s all;
+		-moz-transition:  0.3s all;
+		-o-transition:  0.3s all;
+		transition:  0.3s all;
+		transform-origin: top 0 left 0;
+		height: 1px;
+		position: relative;
+		top: -2px;
+		background-color: black !important;
+	}
+	.SwipedTabs-tabs ion-segment-button
+	{
+		border:none !important;
+		color:gray!important;
+		background-color:white!important;
+	}
+	 .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+	{
+		color:#fa586e !important;
+	}
+	.SwipedTabs-tabs
+	{
+		border-bottom: solid 1px #e6e6e6  !important;
+	}
+	.match_home
+	{
+	padding: 0px;
+	}
+	.swiper-slide
+	{
+	align-items:normal;
+	}
+	.match_div
+	{
+	box-shadow: 0px 1px 4px #ccc;
+	border: 1px solid #fc6274;
+    background-color: white;
+    margin-bottom: 10px;
+	border-radius: 10px;
+	}
+	.match_div h2
+	{
+	text-align: center;
+	padding: 10px 0px;
+	}
+.match_div h2 img
+	{
+	width:20px;
+	}
+
+	.match_div .item-inner
+	{
+		padding-right: 0px !important;
+	}
+	.team_name
+	{
+		background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+		padding: 8px 0px;
+	}
+	.team_name p
+	{
+		color:#fff;
+		text-align: center;
+  }
+  .team_name p span
+  {
+    font-size: 10px;
+    padding: 0px 10px;
+    font-weight: 600;
+  }
+	.item-md ion-thumbnail[item-start]
+	{
+		margin: 0px !important;
+		padding: 5px 10px;
+	}
+	.item-md ion-thumbnail[item-end]
+	{
+		margin: 0px !important;
+		float: left;
+		padding: 5px 10px;
+	}
+	.match_time
+	{
+    padding: 5px 10px;
+    text-align: left !important;
+	}
+	.match_click
+	{
+		text-align: right;
+		padding: 5px 10px;
+		color: #035596;
+	}
+	ion-title
+	{
+		width: 78% !important;
+
+	}
+	.notify
+	{
+	background: #fff;
+    color: #000;
+    font-size: 12px;
+    padding: 2px 5px;
+    margin-top: -5px;
+	border-radius: 50%;
+  }
+  .item-md ion-thumbnail[item-start] img
+  {
+    float: right;
+  }
+  
+	
+
+}

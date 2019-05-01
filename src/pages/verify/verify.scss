@@ -1,0 +1,12 @@
+page-verify {
+    .tabs-md .tab-button[aria-selected=true]
+    {
+        color: #fc6175;      
+        border-bottom: 2px solid #fc6175;
+    }
+    .tabs-md .tab-button-text
+    {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}

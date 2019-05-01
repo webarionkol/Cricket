@@ -1,0 +1,43 @@
+<ion-tabs tabsPlacement="top">
+   <ion-tab [root]="wkRoot" tabTitle="WK" tabIcon="custom-wk"></ion-tab>
+    <ion-tab [root]="batRoot" tabTitle="BAT" tabIcon="custom-bat"></ion-tab>
+    <ion-tab [root]="arRoot" tabTitle="AR" tabIcon="custom-ar"></ion-tab>
+    <ion-tab [root]="bowRoot" tabTitle="BOW" tabIcon="custom-bow"></ion-tab>
+
+</ion-tabs>
+
+
+
+<ion-footer class="player_select_footer">
+
+        <ion-grid>
+        
+                <ion-row>
+                    <ion-col col-5 class="points_footer">
+                         <div class="point_fo_left1">
+                            <p class="point_fo">{{ team_1_count }}</p>
+                            <p class="name_fo"> T1</p>
+                         </div>
+                         <div class="point_fo_left2">
+                            <p class="point_fo">{{ team_2_count }}</p>
+                            <p class="name_fo"> T2</p>
+                        </div>
+                        <div class="point_fo_left3">
+                             <p class="point_fo">{{players_count_var}}/11</p>
+                             <p class="name_fo"> PLAYERS</p>
+                        </div> 
+                    </ion-col>
+                    <ion-col col-4 class="points_footer">
+                            <p class="point_fo">{{final_credit}}/100</p>
+                            <p class="name_fo">CREDITS LEFT</p>
+                    </ion-col>
+                    
+                    <ion-col col-3 class="points_footer" >
+                        <button class="active" *ngIf="players_count_var == 11"  (click)="Goto_selectcaptain()">NEXT</button>
+                        <button *ngIf="players_count_var != 11"  >NEXT</button>
+                    </ion-col>
+                  </ion-row>       
+        
+            </ion-grid>
+
+</ion-footer>

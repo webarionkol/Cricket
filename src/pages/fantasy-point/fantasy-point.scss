@@ -1,0 +1,12 @@
+page-fantasy-point {
+    .tab-button-text
+    {
+        font-size:14px !important;
+        font-weight: bold;
+    }
+    .tab-button[aria-selected=true]
+    {
+        color: #fc6175 !important;
+        border-bottom: 2px solid;
+    }
+}

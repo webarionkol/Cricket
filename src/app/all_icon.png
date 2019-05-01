@@ -1,0 +1,59 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
+import { ContestPage } from '../pages/contest/contest';
+import { SelectPlayerPage } from '../pages/select-player/select-player';
+import { WidthrawPage } from '../pages/widthraw/widthraw';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { HomeFooterPage } from '../pages/home-footer/home-footer';
+import { PlaypointsPage } from '../pages/playpoints/playpoints';
+import { MyteamsPage } from '../pages/myteams/myteams';
+import { SelectCaptainPage } from '../pages/select-captain/select-captain';
+import { HowtoplayPage } from '../pages/howtoplay/howtoplay';
+import { InvitefriendPage } from '../pages/invitefriend/invitefriend';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    ListPage,
+    ContestPage,
+    SelectPlayerPage,
+    WidthrawPage,
+    LoginPage,
+    RegisterPage,
+    HomeFooterPage,
+    PlaypointsPage,MyteamsPage,SelectCaptainPage,HowtoplayPage,InvitefriendPage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    ListPage,
+    ContestPage,
+    SelectPlayerPage,
+    WidthrawPage,
+    LoginPage,
+    RegisterPage,
+    HomeFooterPage,
+    PlaypointsPage,MyteamsPage,SelectCaptainPage,HowtoplayPage,InvitefriendPage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}

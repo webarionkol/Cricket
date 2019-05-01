@@ -1,0 +1,316 @@
+<!--
+  Generated template for the T20Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+
+      <ion-title>ODI</ion-title>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+
+  </ion-header>
+
+
+  <ion-content padding>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <p>Here's how your team earns points</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="accordion vertical" >
+          <ul>
+            <li>
+               <input type="radio" id="radio-12" name="radio-accordion"/>
+                  <label for="radio-12">BATTING</label>
+                  <div class="content" >
+                     <ion-grid style="padding:0px;">
+                    <ion-row class="score-table">
+                        <ion-col col-8 class="point-content">
+                          For Every Run
+                        </ion-col>
+                        <ion-col col-4 class="score">
+                            {{ each_run }}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="score-table">
+                        <ion-col col-8 class="point-content">
+                          Every Boundary hit
+                        </ion-col>
+                        <ion-col col-4 class="score">
+                            {{ each_four }}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="score-table">
+                        <ion-col col-8 class="point-content">
+                          Every Six
+                        </ion-col>
+                        <ion-col col-4 class="score">
+                            {{ each_six }}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="score-table">
+                        <ion-col col-8 class="point-content">
+                          Half Century
+                        </ion-col>
+                        <ion-col col-4 class="score">
+                            {{ half_century }}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="score-table">
+                        <ion-col col-8 class="point-content">
+                          Century
+                        </ion-col>
+                        <ion-col col-4 class="score">
+                            {{ century }}
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="score-table">
+                        <ion-col col-8 class="point-content">
+                          Dissmissal for duck
+                        </ion-col>
+                        <ion-col col-4 class="score minus">
+                            {{ dismissal_for_duck }}
+                        </ion-col>
+                    </ion-row>
+
+                    </ion-grid>
+
+                  </div>
+              </li>
+
+                   <li>
+               <input type="radio" id="radio-512" name="radio-accordion" />
+                  <label for="radio-512">BOWLING</label>
+                  <div class="content" >
+                      <ion-grid style="padding:0px;">
+                          <ion-row class="score-table">
+                              <ion-col col-8 class="point-content">
+                                Wicket (Excluding run-out)
+                              </ion-col>
+                              <ion-col col-4 class="score">
+                                  {{ per_wicket }}
+                              </ion-col>
+                          </ion-row>
+
+                          <ion-row class="score-table">
+                              <ion-col col-8 class="point-content">
+                                4 Wicket
+                              </ion-col>
+                              <ion-col col-4 class="score">
+                                  {{ wickets_4 }}
+                              </ion-col>
+                          </ion-row>
+
+                          <ion-row class="score-table">
+                              <ion-col col-8 class="point-content">
+                                5 Wicket
+                              </ion-col>
+                              <ion-col col-4 class="score">
+                                  {{ wickets_5 }}
+                              </ion-col>
+                          </ion-row>
+
+                          <ion-row class="score-table">
+                              <ion-col col-8 class="point-content">
+                                Madien Over
+                              </ion-col>
+                              <ion-col col-4 class="score">
+                                  {{ maiden_over }}
+                              </ion-col>
+                          </ion-row>
+                      </ion-grid>
+
+                  </div>
+              </li>
+
+
+              <li>
+                  <input type="radio" id="radio-1002" name="radio-accordion" />
+                  <label for="radio-1002">FIELDING</label>
+                       <div class="content" >
+                          <ion-grid style="padding:0px;">
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                    Catch
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                     {{ catch }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                    Run-out
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ run_out }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                    Stumping
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                     {{ stumping }}
+                                  </ion-col>
+                              </ion-row>
+
+                          </ion-grid>
+
+                  </div>
+              </li>
+
+              <li>
+                  <input type="radio" id="radio-1012" name="radio-accordion" />
+                  <label for="radio-1012">OTHERS</label>
+                       <div class="content" >
+                          <ion-grid style="padding:0px;">
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Captain
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      2x
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Vice Captain
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      1.5x
+                                  </ion-col>
+                              </ion-row>
+
+                          </ion-grid>
+
+                  </div>
+              </li>
+
+              <li>
+                  <input type="radio" id="radio-10222" name="radio-accordion" />
+                  <label for="radio-10222">ECONOMY RATE</label>
+                       <div class="content" >
+                          <ion-grid style="padding:0px;">
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Below 4 runs
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                     {{ economy_rate_below_4 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Between 4 and 5
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ economy_rate_4_5 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Between 5 and 6
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ economy_rate_5_6 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Between 6 and 7
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ economy_rate_6_7 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Between 7 and 9
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ economy_rate_7_9 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Above 9
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ economy_rate_above_9 }}
+                                  </ion-col>
+                              </ion-row>
+
+                          </ion-grid>
+
+                  </div>
+              </li>
+
+
+              <li>
+                  <input type="radio" id="radio-10322" name="radio-accordion" />
+                  <label for="radio-10322">STRIKE RATE (EXCEPT BOWLER)</label>
+                       <div class="content" >
+                          <ion-grid style="padding:0px;">
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Between 60 and 70
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ strike_rate_60_70 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Between 50 and 60
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ strike_rate_50_60 }}
+                                  </ion-col>
+                              </ion-row>
+
+                              <ion-row class="score-table">
+                                  <ion-col col-8 class="point-content">
+                                      Below 50
+                                  </ion-col>
+                                  <ion-col col-4 class="score">
+                                      {{ strike_rate_below_50 }}
+                                  </ion-col>
+                              </ion-row>
+
+                          </ion-grid>
+
+                  </div>
+              </li>
+
+
+
+
+          </ul>
+      </div>
+
+
+  </ion-content>

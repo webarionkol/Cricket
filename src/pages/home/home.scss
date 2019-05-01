@@ -1,0 +1,293 @@
+page-home {
+    
+    .player_select_footer
+    {
+        background: #565555;
+        height: 60px;
+        color: #fff;
+        padding: 5px 0px;
+    }
+    
+ 
+ }
+/* .scroll-content
+ {
+     padding-bottom: 0px !important;
+ }
+ ion-app.md [padding] .scroll-content
+ {
+    padding: 16px 0px;
+ }
+ .SwipedTabs-indicatorSegment
+ {
+     -webkit-transition: 0.3s all;
+     -moz-transition:  0.3s all;
+     -o-transition:  0.3s all;
+     transition:  0.3s all;
+     transform-origin: top 0 left 0;
+     height: 1px;
+     position: relative;
+     top: -2px;
+     background-color: black !important;
+ }
+ .SwipedTabs-tabs ion-segment-button
+ {
+     border:none !important;
+     color:gray!important;
+     background-color:white!important;
+ }
+  .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+ {
+     color:#971728 !important;
+ }
+ .SwipedTabs-tabs
+ {
+     border-bottom: solid 1px #e6e6e6  !important;
+ }
+ .match_home
+ {
+ padding: 0px;
+ 
+ }
+ .swiper-slide
+ {
+ align-items:normal;
+ }
+ .match_div
+ {
+ box-shadow: 0px 1px 4px #7373737a;
+ border: 1px solid #cccccc87;
+ background-color: white;
+ margin-bottom: 10px;
+ }
+ .match_div h2
+ {
+ text-align: center;
+ }
+ .match_div p
+ {
+ text-align: center;
+ padding: 10px 0px;
+ }
+ .match_thumbnail
+ {
+ 
+ }
+ .list-md .item-block .item-inner
+ {
+ border-bottom: 0px;
+ }
+ .item-md.item-block .item-inner
+ {
+ border-bottom: 0px;
+ }
+ .order_swipe_tab
+ {
+ padding: 5px 10px;
+ }
+ .match_time
+ {
+     color: #b50404 !important;
+ }
+ .segment-md .segment-button
+ {
+ font-size: 18px;
+ }
+ .label-md
+ {
+ margin:0px;
+ }
+ .toolbar-title-md
+ {
+ padding: 10px 0px;
+ text-align: center;
+ }
+ ion-title
+ {
+ width:80%;
+ float: left;
+ }
+ .contest_div
+ {
+     padding: 15px 0px;
+     border-bottom: 1px solid #bcbbbb;
+ }
+ .contest_div_head
+ {
+     padding: 0px;
+ }
+ .contest_page
+ {
+     padding: 0px;
+ }
+ .contest_win
+ {
+     text-align: center;
+     margin-bottom: 5px;
+ }
+ .contest_win p
+ {
+     font-size: 13px;
+ }
+ .contest_win h2
+ {
+  color: #3f2580;
+ }
+ .contest_entry
+ {
+     text-align: right;
+ }
+ .contest_entry p
+ {
+     font-size: 13px;
+ }
+ .contest_prize p
+ {
+     font-size: 13px;
+ }
+ .contest_jion
+ {
+     text-align: right;
+ }
+ .contest_jion button
+ {
+     background: #593f9f;
+     border: 1px solid #40297f;
+     color: #fff;
+     padding: 4px 10px;
+     border-radius: 4px;
+ }
+ .contest_total_team
+ {
+     text-align: right;
+ }
+ .contest_team p
+ {
+     width:50%;
+     float: left;
+ }
+ .team_bar
+ {
+     width: 100%;
+     height: 3px;
+     background: #b9b8b8;
+     margin-bottom: 6px;
+ }
+ .team_bar span
+ {
+     width: 30%;
+     float: left;
+     height: 3px;
+     background: #d00303;
+ }
+ .toolbar-background-md
+ {
+     background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+ }
+ .toolbar-title-md
+ {
+     color:#fff;
+ }
+ .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default
+ {
+     color:#fff;
+ }
+ .button-md
+ {
+     background-color: transparent;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+ }
+ .item-md h2
+ {
+     font-weight: 600 !important;
+ }
+ .select_header 
+ {
+    background: #e6f4fb;
+    padding: 3px 0px;
+    margin-bottom: 4px;
+    -webkit-box-shadow: 0px 2px 5px #85c3df;
+    box-shadow: 0px 2px 5px #c5e9fa;
+    margin-top: 15px;
+ }
+ .select_header h2{
+    font-size: 14px !important;
+    margin: 0px;
+    color: #464646;
+ }
+ 
+ .select_player .grid
+ {
+     padding: 0px;
+ }
+ .select_body
+ {
+    background: #f7f7f7;
+    margin-bottom: 2px;
+    -webkit-box-shadow: 0px 2px 0px #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+ }
+ .player_img
+ {
+     padding: 0px;
+ }
+ .player_name
+ {
+     padding: 8px 0px;
+ }
+ .player_name p
+ {
+  margin: 0px;
+ }
+ .player_credit
+ {
+     padding: 15px 10px 15px 0px;
+ }
+ .player_credit ion-icon
+ {
+     float: right;
+     font-size: 25px;
+     color: #05800a;
+ }
+
+ 
+ .withdraw_div
+ {
+     box-shadow: 0px 1px 4px #7373737a;
+     border: 1px solid #cccccc87;
+     background-color: white;
+     margin-bottom: 10px;
+     padding: 20px 10px;
+     text-align:center;
+ }
+ .withdraw_div h2
+ {
+     margin-bottom: 15px;
+ }
+ .withdraw_div p
+ {
+     margin-bottom: 15px;
+ }
+ .withdraw_div button
+ {
+     width: 100%;
+     padding: 10px;   
+     font-size: 18px;
+     color: #fff;
+ }
+ .heading
+ {
+    font-size: 16px;
+    margin: 0px;
+    color: #3b2e86;
+    text-align: center;
+ }
+ .inner_page
+ {
+    border: 1px solid #ccc;
+    box-shadow: 0px 1px 8px #727171cc;
+    padding: 10px;
+
+ }
+ */

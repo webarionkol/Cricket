@@ -1,0 +1,64 @@
+page-pan {
+    .item_div h2{
+        font-weight: normal !important;
+        font-size: 14px;
+        margin-top: 5px !important;
+    }
+    .inner_page
+    {
+        padding: 10px 10px 40px;
+    }
+    .login_input p
+    {
+        color:#000;
+    }
+    .item_div button
+    {
+        background:#054797 !important;
+        width: 100% !important;
+        color: #fff !important;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+    .inner_page p
+    {
+        margin: 6px 0px 0px;
+        padding-left: 20px;
+        color: #949292;
+        font-size: 13px;
+    }
+    .mandatory
+    {
+        text-align: center;
+        color: #000 !important;
+        margin: 15px 0px 10px !important;
+    }
+    .why-should
+    {
+        text-align: center;
+        color: #03397b !important;
+        text-decoration: underline;
+    }
+    .button_left
+    {
+        background: #22a127;
+        width: 100%;
+        margin: 30px 0px;
+        padding: 25px 0px;
+        border-radius: 5px;
+    }
+    .input-wrapper
+    {
+        border-bottom:1px solid #ccc;
+    }
+    .select-md {
+        padding: 13px 8px 0px 0px;
+        width: 100% !important;
+    }
+    ion-select
+    {
+        max-width: 100% !important;
+    }
+    
+}

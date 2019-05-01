@@ -1,0 +1,256 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-modal
+{
+  
+    background: #000000b3;
+}
+.scroll-content
+{
+	padding-bottom: 0px !important;
+}
+ion-app.md [padding] .scroll-content
+{
+   padding: 16px 0px;
+}
+.SwipedTabs-indicatorSegment
+{
+	-webkit-transition: 0.3s all;
+	-moz-transition:  0.3s all;
+	-o-transition:  0.3s all;
+	transition:  0.3s all;
+	transform-origin: top 0 left 0;
+	height: 1px;
+	position: relative;
+	top: -2px;
+	background-color: black !important;
+}
+.SwipedTabs-tabs ion-segment-button
+{
+	border:none !important;
+	color:gray!important;
+	background-color:white!important;
+}
+ .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+{
+	color:#fa586e !important;
+}
+.SwipedTabs-tabs
+{
+	border-bottom: solid 1px #e6e6e6  !important;
+}
+.match_home
+{
+padding: 0px;
+
+}
+.swiper-slide
+{
+align-items:normal;
+}
+.match_div
+{
+box-shadow: 0px 1px 4px #ccc;
+border: 1px solid #ccc;
+background-color: white;
+margin-bottom: 10px;
+}
+.match_div h2
+{
+text-align: center;
+}
+
+.match_thumbnail
+{
+
+}
+.list-md .item-block .item-inner
+{
+border-bottom: 0px;
+}
+.item-md.item-block .item-inner
+{
+border-bottom: 0px;
+}
+.order_swipe_tab
+{
+padding: 5px 10px;
+}
+.match_time
+{
+	color: #b50404 !important;
+}
+.segment-md .segment-button
+{
+font-size: 18px;
+}
+.label-md
+{
+margin:0px;
+}
+.toolbar-title-md
+{
+padding: 10px 0px;
+text-align: center;
+}
+ion-title
+{
+width:80%;
+float: left;
+}
+
+.toolbar-background-md
+{
+	background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+}
+.toolbar-title-md
+{
+	color:#fff;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default
+{
+	color:#fff;
+}
+.button-md
+{
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.item-md h2
+{
+	font-weight: 600 !important;
+}
+.select_header 
+{
+   background: #e6f4fb;
+   padding: 3px 0px;
+   margin-bottom: 4px;
+   -webkit-box-shadow: 0px 2px 5px #85c3df;
+   box-shadow: 0px 2px 5px #c5e9fa;
+   margin-top: 15px;
+}
+.select_header h2{
+   font-size: 14px !important;
+   margin: 0px;
+   color: #464646;
+}
+
+.select_player .grid
+{
+	padding: 0px;
+}
+.select_body
+{
+   background: #f7f7f7;
+   margin-bottom: 2px;
+   -webkit-box-shadow: 0px 2px 0px #ccc;
+   box-shadow: 0px 0px 5px #ccc;
+}
+.player_img
+{
+	padding: 0px;
+}
+.player_name
+{
+	padding: 8px 0px;
+}
+.player_name p
+{
+ margin: 0px;
+}
+.player_credit
+{
+	padding: 15px 10px 15px 0px;
+}
+.player_credit ion-icon
+{
+	float: right;
+	font-size: 25px;
+	color: #05800a;
+}
+.logout
+{
+font-size: 2.8rem;
+    font-weight: 600;
+        margin: 0px 14px;
+
+}
+
+.withdraw_div
+{
+	box-shadow: 0px 1px 4px #ccc;
+	border: 1px solid #ccc;
+	background-color: white;
+	margin-bottom: 10px;
+	padding: 20px 10px;
+	text-align:center;
+}
+.withdraw_div h2
+{
+	margin-bottom: 15px;
+}
+.withdraw_div p
+{
+	margin-bottom: 15px;
+}
+.withdraw_div button
+{
+	width: 100%;
+	padding: 10px;   
+	font-size: 18px;
+	color: #fff;
+}
+.heading
+{
+   font-size: 16px;
+   margin: 0px;
+   color: #3b2e86;
+   text-align: center;
+}
+.inner_page
+{
+   border: 1px solid #ccc;
+   box-shadow: 0px 1px 8px #ccc;
+   padding: 10px;
+
+}
+.sidemenu .item-md
+{
+	border-bottom:1px solid #dad9d9;
+}
+.item-md {
+    padding-left: 0px;
+}
+
+.item-md ion-icon[item-left] {
+    margin-left: 10px;
+    margin-top: 11px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #010400;
+}
+.item-md ion-icon[item-left] + .item-inner
+{
+	margin-left: 10px;
+}
+.loading-md .loading-wrapper
+{
+        background: none !important;
+        box-shadow: none !important;
+}

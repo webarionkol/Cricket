@@ -1,0 +1,121 @@
+page-edit-player {
+.scroll-content
+{
+	    padding-bottom: 70px !important;
+} 	
+    .tabs-md .tabbar
+    {
+        background: none;
+      
+    }
+   .tabs-md[tabsPlacement="top"] > .tabbar::after, .tabs-md[tabsPlacement="bottom"] > .tabbar::before
+    {
+        background-image: none;
+    }
+    .point_fo_left1
+    {
+        width:20%;
+        float: left;
+    }
+	.active
+    {
+          background: #05800a !important;
+    }
+    .point_fo_left2
+    {
+        width:20%;
+        float: left;
+    }
+    .point_fo_left3
+    {
+        border-right: 1px dashed #fff;
+    }
+    .point_fo
+    {
+        margin: 0px;
+    }
+    .name_fo
+    {
+        margin: 0px;
+        font-size: 10px;
+        font-weight: normal;
+        color: #c0c0c0;
+    }
+    .player_select_footer
+    {
+
+        background: #565555;
+    }
+    .player_select_footer button
+    {
+       padding: 5px;
+       background: #565555;
+       color:#fff;
+       border: 2px solid #ccc;
+       border-radius: 5px;
+       width: 100%;
+    }
+   .point_fo
+    {
+        color:#fff;
+    }
+	
+	ion-icon {
+        &[class*="custom-"] {
+            margin: 0 5px 0 0;
+            vertical-align: middle;
+            $sz: 45px;
+            width: $sz;
+            height: $sz;
+        } // custom icons
+
+        //WICKET KEEPER
+
+        &[class*="wk"][ng-reflect-is-active="true"] {
+            background: url("../assets/imgs/player-wk.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of active
+        &[class*="wk"][ng-reflect-is-active="false"] {
+            background: url("../assets/imgs/player-wk.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of inactive
+
+        //BATSMEN
+
+        &[class*="bat"][ng-reflect-is-active="true"] {
+            background: url("../assets/imgs/player-bt.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of active
+        &[class*="bat"][ng-reflect-is-active="false"] {
+            background: url("../assets/imgs/player-bt.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of inactive
+
+         //ALLROUNDER
+
+        &[class*="ar"][ng-reflect-is-active="true"] {
+            background: url("../assets/imgs/player-ar.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of active
+        &[class*="ar"][ng-reflect-is-active="false"] {
+            background: url("../assets/imgs/player-ar.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of inactive
+
+       //BOWLWER
+
+        &[class*="bow"][ng-reflect-is-active="true"] {
+            background: url("../assets/imgs/player-bw.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of active
+        &[class*="bow"][ng-reflect-is-active="false"] {
+            background: url("../assets/imgs/player-bw.png") no-repeat 50% 50%;
+            background-size: contain;
+        }//in case of inactive
+    }
+    .tab-button-icon
+    {
+        margin-top: 15px !important;
+    }
+
+}

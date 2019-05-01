@@ -1,0 +1,49 @@
+page-otp {
+  .button_left
+  {
+      background: #22a127;
+      width: 100%;
+      margin: 28px 0px 20px;
+      padding: 20px 0px;
+      border-radius: 5px;
+  }
+  .input-wrapper
+  {
+      border-bottom:1px solid #ccc;
+  }
+  .select-md {
+      padding: 13px 8px 0px 0px;
+      width: 100% !important;
+  }
+  ion-select
+  {
+      max-width: 100% !important;
+  }
+  .login_input
+  {
+      margin-bottom: 5px;
+  }
+  ion-content
+  {
+      width: 90%;
+      margin: 40% 5%;
+      height: 45%;
+      border-radius: 5px;
+  }
+  .scroll-content
+  {
+      padding:0px !important;
+  }
+  .list-md
+  {
+      margin-bottom:0px !important;
+  }
+  .inner_page p
+    {
+        margin: 6px 0px 0px;
+        padding-left: 20px;
+        color: #949292;
+        font-size: 13px;
+    }
+
+}

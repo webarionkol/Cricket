@@ -1,0 +1,111 @@
+page-filter-model {
+    .toolbar-background-md
+    {
+        background:linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+    .header-md::after
+    {
+        background-image: none !important;
+    }   
+    .toolbar-md
+    {
+        padding: 0px;
+        min-height: 25px;
+        
+    }
+    .toolbar-md h4
+    {
+        color:#fff;
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+    .scroll-content
+    {
+        margin-top: 15px;
+    }
+    ion-modal .show-page
+    {
+        padding-top: 170px !important;
+        background: #000 !important;
+    }
+    .filter_view
+    {
+        background: #fff;
+    }
+    .filter_head
+    {
+        color: #ffffff;
+        font-size: 16px;
+        padding: 5px;
+        background: #593f9f;
+        width: 100%;
+    }
+    .filter_div
+    {
+        
+    }
+    .filter_div p
+    {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        margin: 0px;
+    }
+    .scroll-content
+    {
+        margin-top: 29px;
+    }
+    .player_select_footer
+    {
+        background: #033676;
+       
+    }
+    .points_footer
+    {
+        text-align: center;
+    }
+    .points_footer button
+    {
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 18px;
+        text-align: center;
+        background: #05970a;
+        color: #fff;
+    }
+    .radio_div
+    {
+        width: 50%;
+        float: left;
+    }
+    .item-radio.item-md ion-label .team_head .point_fo
+    {
+        padding: 7px 0px;
+        text-align: center;
+        border: 1px solid #ccc !important;
+        border-radius: 5px;
+    }
+    .item-radio-checked.item-md ion-label .team_head .point_fo
+    {
+        border: 1px solid #fc6174 !important;
+        padding: 7px 0px;
+        text-align: center;
+    }
+    .radio-md .radio-icon
+    {
+        display: none !important;
+    }
+    .toolbar-title-md
+    {
+        padding: 10px 15px;
+        text-align: left;
+    }
+    .myteam_div
+    {
+        padding: 0px;
+    }
+    .team_head
+    {
+        padding: 0px;
+    }
+}

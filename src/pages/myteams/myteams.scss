@@ -1,0 +1,121 @@
+page-myteams {
+    .myteam_div
+    {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    .team_header
+    {
+
+    }
+    .team_head
+    {
+        border-bottom: 1px solid #ccc;
+        padding: 15px 0px;
+    }
+    .team_head h2
+    {
+        font-size: 18px;
+        color: #5a5757;
+        margin: 0px;
+    }
+    .team_cap
+    {
+        padding: 15px 10px;
+        border-right: 1px solid #ccc;
+    }  
+    .team_cap h4
+    {
+        font-size: 14px;
+        color: #bd7407;
+        margin: 0px;
+    }
+    .team_cap h2
+    {
+        margin: 0px;
+        font-size: 16px;
+        color: #565353;
+    }
+    .team_vice
+    {
+        padding: 15px 10px;
+    }
+    .team_vice h4
+    {
+        font-size: 14px;
+        color: #0a9020;
+        margin: 0px;
+    }
+    .team_vice h2
+    {
+        margin: 0px;
+        font-size: 16px;
+        color: #565353;
+    }
+    .myteam_players
+    {
+        text-align: center;
+        padding: 15px 0px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    .team_player h4
+    {
+        font-size: 14px;
+        color: #484848;
+        margin: 0px;
+    }
+    .team_player h2
+    {
+        margin: 0px;
+        font-size: 18px;
+        color: #565353;
+    }
+    .team_action h4
+    {
+        font-size: 14px;
+        color: #484848;
+        margin: 0px;
+        text-align: center;
+        padding: 15px 0px 5px;
+    }
+    .team_action ion-icon
+    {
+        color: #3b2e86;
+        margin-right: 5px;
+    }
+	.match_grid
+    {
+        background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+	.div-back
+    {
+        background: #fff;
+        border-radius: 5px;
+    }
+    .div-left
+    {
+
+    }
+    .div-left p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+    }
+    .div-left p span
+    {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    .div-right
+    {
+        text-align: right;
+    }
+    .div-right p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+        color: #05880a;
+    }
+    
+}

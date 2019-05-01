@@ -1,0 +1,61 @@
+page-add-cash {
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .current_bal
+    {
+        border-bottom: 1px solid #ccc;
+    }
+    .bal_left
+    {
+        margin:0px;   
+        font-size: 16px; 
+    }
+    .bal_right
+    {
+        margin:0px;
+        text-align:right;   
+        font-size: 16px; 
+    }
+    .cash_head
+    {
+        margin: 0px;
+        text-align: center;
+        color: #aba9a9;
+        margin-top: 5px;
+    }
+    .amount_add1
+    {
+        margin: 0px;
+        padding-left:15px;
+      
+    }
+    .amount_input ion-input
+    {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .amount_add p
+    {
+        margin: 0px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;        
+    }
+ .amount_button
+ {
+     margin-top:5px;
+ }
+    .amount_button button
+    {
+        background: #0c9b12;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}

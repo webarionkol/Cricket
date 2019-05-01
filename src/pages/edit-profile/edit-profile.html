@@ -1,0 +1,145 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  <ion-buttons end>
+          <button ion-button (click)="closeModal()"> CLOSE</button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+
+              <form [formGroup]="ProfileValidate" >
+
+               <ion-list class="inner_page">
+
+                <ion-item class="login_input">
+                    <ion-label position="floating">Name*</ion-label>
+                    <ion-input type="text"  formControlName="name"></ion-input>
+
+                  </ion-item>
+
+
+                    <ion-item *ngIf="ProfileValidate.controls.name.hasError('pattern') && ProfileValidate.controls.name.touched" >
+                      <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+                  </ion-item>
+
+
+
+
+
+                  <ion-item class="login_input">
+
+                       <ion-select interface="popover"  formControlName="gender"  placeholder="Select Gender">
+                         <ion-option value="Male">Male</ion-option>
+                         <ion-option value="Female">Female</ion-option>
+                       </ion-select>
+                   </ion-item>
+
+
+
+
+
+
+              <ion-item class="login_input">
+
+                  <ion-label position="floating">Email Id*</ion-label>
+                  <ion-input  formControlName="email"  [readonly]="true"></ion-input>
+
+              </ion-item>
+
+              <ion-item class="login_input">
+
+                  <ion-label position="floating">Phone Number</ion-label>
+                  <ion-input  formControlName="phone"></ion-input>
+
+              </ion-item>
+
+
+              <ion-item class="login_input">
+
+                  <ion-label position="floating">Address</ion-label>
+                  <ion-input  formControlName="address"></ion-input>
+
+               </ion-item>
+
+               <ion-item *ngIf="ProfileValidate.controls.address.hasError('pattern') && ProfileValidate.controls.address.touched" >
+                  <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+              </ion-item>
+
+               <ion-item class="login_input">
+
+                    <ion-label position="floating">City</ion-label>
+                    <ion-input  formControlName="city"></ion-input>
+
+              </ion-item>
+
+              <ion-item *ngIf="ProfileValidate.controls.city.hasError('pattern') && ProfileValidate.controls.city.touched" >
+                  <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+              </ion-item>
+
+              <ion-item class="login_input">
+
+                    <ion-label position="floating">State</ion-label>
+                    <ion-input  formControlName="state"></ion-input>
+
+              </ion-item>
+              <ion-item *ngIf="ProfileValidate.controls.state.hasError('pattern') && ProfileValidate.controls.state.touched" >
+                  <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+              </ion-item>
+
+
+              <ion-item class="login_input">
+
+                    <ion-label position="floating">Pincode</ion-label>
+                    <ion-input formControlName="pincode"></ion-input>
+
+              </ion-item>
+              <ion-item *ngIf="ProfileValidate.controls.pincode.hasError('pattern') && ProfileValidate.controls.pincode.touched" >
+                  <p style="color: #f70505;">Sorry,give pin code is wrong!</p>
+              </ion-item>
+
+
+              <ion-item class="login_input">
+
+                    <ion-label position="floating">Country</ion-label>
+                    <ion-input formControlName="country"></ion-input>
+
+              </ion-item>
+              <ion-item *ngIf="ProfileValidate.controls.country.hasError('pattern') && ProfileValidate.controls.country.touched" >
+                  <p style="color: #f70505;">Sorry, only small and capital letters are allowed!</p>
+              </ion-item>
+
+              <div class="login_input">
+
+              <button ion-button color="dark" [disabled]="!ProfileValidate.valid" (click)="update_profile()" class="button_left">UPDATE</button>
+              </div>
+
+              <!--<ion-item>
+                <a color="dark">Forget Password</a>
+                <a color="dark" (click)="Goto_register()">SignUp</a>
+              </ion-item>-->
+
+
+            </ion-list>
+
+            </form>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+</ion-content>

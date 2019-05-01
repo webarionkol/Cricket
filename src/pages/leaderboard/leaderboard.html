@@ -1,0 +1,158 @@
+<!--
+  Generated template for the LeaderboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>leaderboard</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid class="match_grid">
+        <ion-row class="div-back">
+          <ion-col col-6 class="div-left">
+              <p>{{scores.team_1}}<span>VS</span>{{scores.team_2}}</p>
+          </ion-col>
+          <ion-col col-6 class="div-right">
+              <p>{{m_status}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+      <ion-grid class="scorecard-div">
+          <ion-row>
+           <!-- <ion-col col-12 class="score-card">
+                <p>SCORECARD</p>
+            </ion-col>
+            <ion-col col-2>
+                <p>NZ</p>
+            </ion-col>
+            <ion-col col-4>
+                <p style="border-right:1px solid #000;">157-8 (38.5)</p>
+            </ion-col>
+            <ion-col col-2>
+                <p>IND</p>
+            </ion-col>
+            <ion-col col-4>
+                <p>160-2 (35.6)</p>
+            </ion-col>-->
+            <ion-col col-12 class="winteam">
+                <p>{{ scores.match_score }}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+        <ion-grid class="viewplayer-div">
+            <ion-row>
+              <ion-col col-12 class="View-player" (click)="Goto_playpoint()">
+                  <p>View Player Status <ion-icon name="ios-arrow-forward" style="float:right;"></ion-icon></p>
+              </ion-col>       
+            </ion-row>
+          </ion-grid>
+    
+          <ion-grid class="contest-view">
+              <ion-row>
+                  <ion-col col-2 class="contest">
+                      <img src="assets/imgs/contest.png">
+                  </ion-col> 
+                <ion-col col-7 class="contest">
+                     <p>{{con_name}}</p>
+                            <p *ngIf="is_practise_contest==0">Winning Amount:{{winning_pirze}}</p>
+                            <p *ngIf="is_practise_contest==1">practise contest</p>
+                </ion-col> 
+                <ion-col col-3 class="entry">
+                   <p (click)="openRank(con_details)">No of winner :{{no_winner}} </p>
+                   
+                    
+                </ion-col>       
+              </ion-row>
+    
+          </ion-grid>
+
+<div *ngIf="scores.user_contest!='' ">
+          <ion-grid style="padding:0px;" >
+              <ion-row class="select_header">
+                  <ion-col col-4 class="player_img">
+                    <h2>Name</h2>
+                  </ion-col>
+                  <ion-col col-4 class="player_img">
+                    <h2>Points</h2>
+                  </ion-col>
+                   <ion-col col-2 class="player_img" *ngIf="m_status=='Closed' ">
+                    <h2>Amount </h2>
+                  </ion-col>
+				  
+				  <ion-col col-2 class="player_credit1">
+                      <h2>Rank </h2>       
+                  </ion-col>
+                </ion-row>  
+              
+			 			  <div   *ngIf="match_started=='1' ">
+			  
+			  <ion-row class="select_body" (click)="preview(contest,scores.team_1,scores.team_2)" *ngFor="let contest of contests">
+                  <ion-col col-4 class="player_name">
+                     <!-- <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>-->
+					  <h4>{{contest.user_name}}</h4>
+                  </ion-col>
+                  <ion-col col-4 class="player_name">
+                     
+                     <p>{{contest.points}} </p>
+                  </ion-col>
+				  
+				  <ion-col col-2 class="player_name" *ngIf="m_status=='Closed' ">
+                     
+                     <p>{{contest.amount}} </p>
+                  </ion-col>
+				  
+                  
+                 
+                  <ion-col col-2 class="player_credit">
+                      #{{ contest.rank  }}
+                  </ion-col>
+                </ion-row>
+      
+                </div>
+				
+				<div  *ngIf="match_started=='0' ">
+				
+				
+			  
+			  <ion-row class="select_body"  *ngFor="let contest of contests">
+                  <ion-col col-4 class="player_name">
+                     <!-- <ion-thumbnail item-start class="match_thumbnail">
+                          <img src="assets/imgs/Jozi Stars.jpg">
+                      </ion-thumbnail>-->
+					  <h4>{{contest.user_name}}</h4>
+                  </ion-col>
+                  <ion-col col-4 class="player_name">
+                     
+                     <p>{{contest.points}} </p>
+                  </ion-col>
+                  
+                 
+                  <ion-col col-4 class="player_credit">
+                      #{{ contest.rank  }}
+                  </ion-col>
+                </ion-row>
+      
+                </div>
+				
+				
+				
+				
+				
+				
+          </ion-grid>
+		  </div>
+		 
+
+</ion-content>

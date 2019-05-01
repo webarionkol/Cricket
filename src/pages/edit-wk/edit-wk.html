@@ -1,0 +1,122 @@
+<!--
+  Generated template for the WkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+ 
+  <ion-navbar>
+        <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+    <ion-title>Edit Team</ion-title>
+    <button ion-button>
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+  </ion-navbar>
+ 
+</ion-header>
+
+
+<ion-content class="select_player">
+<br>
+    <ion-grid>
+
+            <ion-row>
+                    <ion-col col-12>
+                        <h2 class="heading">PICK 1 WICKET-KEEPER</h2>
+                  </ion-col>
+                </ion-row>
+
+        <ion-row class="select_header">
+          <ion-col col-2>
+            <h2>Info</h2>
+          </ion-col>
+          <ion-col col-7>
+              <h2>Player</h2>
+          </ion-col>
+          
+          <ion-col col-3>
+              <h2>Credit</h2>       
+          </ion-col>
+        </ion-row>
+
+     <!--   <ion-row class="select_body"  *ngFor="let wk of displaywk">
+            <ion-col col-2 class="player_img">
+                <ion-thumbnail item-start class="match_thumbnail">
+                    <img src="assets/imgs/wk_icon.png">
+                </ion-thumbnail>
+            </ion-col>
+            <ion-col col-7 class="player_name">
+               <p> {{ wk.player_name }}</p>
+               <p> {{ wk.player_team_name }} </p>
+            </ion-col>
+            
+            <ion-col col-3 class="player_credit">
+                {{ wk.credit_point }}   <ion-icon name="add-circle"  (click)="handleLike('wk')"></ion-icon>
+            </ion-col>
+          </ion-row>-->
+		  
+		  <ion-item *ngFor="let wk of displaywk;let i=index" class="select_body">               
+                    
+                    <ion-avatar item-left="item-left" class="player_img">
+                       
+						<img *ngIf="wk.player_image" src="{{player_url+'/'+wk.player_image}}">
+						<img  *ngIf="!wk.player_image" src="assets/imgs/profile.png">
+                    </ion-avatar>
+                        <ion-label class="player_name">
+                            <p>{{ wk.player_name }}</p>
+                            <p>{{ wk.player_team_name }}</p>
+                        </ion-label>
+                        <ion-checkbox item-end="item-end" [(ngModel)]="wk.minus"  (ionChange)="onChange(displaywk,i,$event)"></ion-checkbox>
+                        <ion-avatar item-right="item-left" col-3 class="player_credit">
+                           {{ wk.credit_point }}
+						   <div class="center" *ngIf="wk.minus== false" >
+                            <ion-icon   class="add-icon" name="add-circle"></ion-icon>
+							</div>
+							<div class="center" *ngIf="wk.minus== true" >
+                            <ion-icon  class="minus-icon" name="remove-circle"></ion-icon>
+							</div>
+                        </ion-avatar>
+               
+            </ion-item>
+
+       <!--   <ion-row class="select_body" >
+              <ion-col col-2 class="player_img">
+                  <ion-thumbnail item-start class="match_thumbnail">
+                    <img src="assets/imgs/wk_icon.png">
+                  </ion-thumbnail>
+              </ion-col>
+              <ion-col col-7 class="player_name">
+                 <p> Heinrich Klaasen   </p>
+                 <p> South Africa </p>
+              </ion-col>
+              
+              <ion-col col-3 class="player_credit">
+                 7   <ion-icon name="add-circle"></ion-icon>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="select_body"  >
+                <ion-col col-2 class="player_img">
+                    <ion-thumbnail item-start class="match_thumbnail">
+                        <img src="assets/imgs/wk_icon.png">
+                    </ion-thumbnail>
+                </ion-col>
+                <ion-col col-7 class="player_name">
+                   <p> Sarfraz Ahmed</p>
+                   <p> Pakistan </p>
+                </ion-col>
+                
+                <ion-col col-3 class="player_credit">
+                    8.5   <ion-icon name="add-circle"></ion-icon>
+                </ion-col>
+              </ion-row>-->
+
+
+
+    </ion-grid>
+
+</ion-content>

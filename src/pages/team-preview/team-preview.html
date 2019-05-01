@@ -1,0 +1,178 @@
+<!--
+  Generated template for the TeamPreviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <h4>Team {{team_no}}</h4>
+   <!-- <ion-buttons end>
+      <button ion-button> <ion-icon name="create" style="color: #fff;"></ion-icon></button>
+    </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()"> <ion-icon name="close" style="color: #fff;"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="team_popup">
+
+    <ion-grid>
+        
+      <ion-row>
+          <ion-col col-12 class="myteam_div" >
+              <H4>WICKET KEEPER</H4>
+          </ion-col>
+          <ion-col class="myteam_div" *ngFor="let wk of wk_keeper;let i=index">
+		  <div class="captain-view">
+			   <span class="captain" *ngIf="wk==cap_name">C</span>
+			   <span class="vicecaptain" *ngIf="wk==vcap_name">VC</span>
+			
+			  <img *ngIf="wk_keeper_image[i]" src="{{site_url+'/'+wk_keeper_image[i]}}">
+                              
+               <img  *ngIf="!wk_keeper_image[i]" src="assets/imgs/profile.png">
+			  </div>
+              <h2 *ngIf="team_1==wk_team_name[i]" style="background: #02167b;">{{wk}}
+			  
+			  </h2>
+			  
+			  <h2 *ngIf="team_2==wk_team_name[i]" style="background: #7d0202;">{{wk}}  
+			  </h2>
+			  
+			  
+                 <p *ngIf="wk_pts[i]!='' " >{{wk_pts[i]}}</p>
+                 <p *ngIf="wk==cap_name " >2X</p>
+                 <p *ngIf="wk==vcap_name " >1.5X</p>
+                 <p *ngIf="wk_pts[i]=='' " >0</p>
+          </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+      
+              <ion-col col-12 class="myteam_div">
+                  <H4>BATSMEN</H4>
+              </ion-col>
+              <ion-col class="myteam_div myteam_player_view" *ngFor="let bat of batsman;let i=index">
+                <div class="captain-view">
+			   <span class="captain" *ngIf="bat==cap_name">C</span>
+			   <span class="vicecaptain" *ngIf="bat==vcap_name">VC</span>
+				
+				<img *ngIf="batsman_image[i]" src="{{site_url+'/'+batsman_image[i]}}">
+                              
+                   <img  *ngIf="!batsman_image[i]" src="assets/imgs/profile.png">
+				   </div>
+                  <h2 *ngIf="team_1==bat_team_name[i]" style="background: #02167b;">{{bat}}
+				  
+				  </h2>
+				  
+				  <h2 *ngIf="team_2==bat_team_name[i]" style="background: #7d0202;">{{bat}}
+				  
+				  </h2>
+				
+               <p *ngIf="bats_pts[i]!='' " >{{bats_pts[i]}}</p>
+               <p *ngIf="bat==cap_name" >2X</p>
+               <p *ngIf="bat==vcap_name" >1.5X</p>
+			   
+			  
+			   
+                 <p *ngIf="bats_pts[i]=='' " >0</p>
+              </ion-col>
+
+            
+
+
+         
+      </ion-row>
+<br>
+      <ion-row>
+         
+              <ion-col col-12 class="myteam_div" >
+                  <H4>ALL ROUNDER</H4>
+              </ion-col>
+              <ion-col class="myteam_div myteam_player_view" *ngFor="let all of all_rounder;let i=index">
+			  <div class="captain-view">
+			   <span class="captain" *ngIf="all==cap_name">C</span>
+			   <span class="vicecaptain" *ngIf="all==vcap_name">VC</span>
+			   
+               <img *ngIf="all_rounder_image[i]" src="{{site_url+'/'+all_rounder_image[i]}}">
+			  
+                   <img  *ngIf="!all_rounder_image[i]" src="assets/imgs/profile.png">
+				   </div>
+                   <h2 *ngIf="team_1==ar_team_name[i]" style="background: #02167b;">{{all}}
+				   </h2>
+				   
+				    <h2 *ngIf="team_2==ar_team_name[i]" style="background: #7d0202;">{{all}}
+				   </h2>
+				 
+                  <p *ngIf="ar_pts[i]!='' " >{{ar_pts[i]}}</p>
+                  <p *ngIf="all==cap_name " >2 X</p>
+                  <p *ngIf="all==vcap_name " >1.5 X</p>
+				  
+                 <p *ngIf="ar_pts[i]=='' " >0</p>
+              </ion-col>
+
+             <!-- <ion-col class="myteam_div myteam_player_view">
+                  <img src="assets/imgs/virat.png">
+                  <h2>Virat</h2>
+                  <p>4 Cr</p>
+              </ion-col>
+
+              <ion-col class="myteam_div myteam_player_view">
+                  <img src="assets/imgs/virat.png">
+                  <h2>Virat</h2>
+                  <p>4 Cr</p>
+              </ion-col>-->
+          
+      </ion-row>
+<br>
+      <ion-row>
+         
+              <ion-col col-12 class="myteam_div">
+                  <H4> BOWLER </H4>
+              </ion-col>
+              <ion-col class="myteam_div" *ngFor="let bow of bowler;let i=index">
+			  <div class="captain-view">
+			  <span class="captain" *ngIf="bow==cap_name">C</span>
+			   <span class="vicecaptain" *ngIf="bow==vcap_name">VC</span>
+			 
+               <img *ngIf="bowler_image[i]" src="{{site_url+'/'+bowler_image[i]}}">
+                              
+                   <img  *ngIf="!bowler_image[i]" src="assets/imgs/profile.png">
+				   </div> 
+                  <h2 *ngIf="team_1==bow_team_name[i]" style="background: #02167b;">{{bow}}
+				  </h2>
+				  
+				  <h2 *ngIf="team_2==bow_team_name[i]" style="background: #7d0202;">{{bow}}
+				  </h2>
+				    
+               <p *ngIf="bow_pts[i]!='' " >{{bow_pts[i]}}</p>
+               <p *ngIf="bow==cap_name " >2 X</p>
+               <p *ngIf="bow==vcap_name " >1.5 X</p>
+                 <p *ngIf="bow_pts[i]=='' " >0</p>
+              </ion-col>
+
+             <!-- <ion-col class="myteam_div">
+                  <img src="assets/imgs/virat.png">
+                  <h2>Virat</h2>
+                  <p>4 Cr</p>
+              </ion-col>
+
+              <ion-col class="myteam_div">
+                  <img src="assets/imgs/virat.png">
+                  <h2>Virat</h2>
+                  <p>4 Cr</p>
+              </ion-col>
+
+              <ion-col class="myteam_div">
+                  <img src="assets/imgs/virat.png">
+                  <h2>Virat</h2>
+                  <p>4 Cr</p>
+              </ion-col>-->
+          
+      </ion-row>
+    </ion-grid>
+</ion-content>

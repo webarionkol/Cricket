@@ -1,0 +1,78 @@
+page-editselect-captain {
+      .player_credit 
+    {
+       padding:0px !important;
+    }
+    .player_img
+    {
+        padding: 5px 0px 0px !important;
+    }
+    .player_name
+    {
+        padding: 8px 10px !important;
+    }
+    .player_vicecaptain
+    {
+        
+    }
+    .select_header
+    {
+        margin-top:0px;
+    }
+    .item-radio.item-md ion-label
+    {
+        border: 1px solid #ccc;
+        background-color:#fff;
+        text-align: center;
+        border-radius: 20px;
+        padding: 5px 0px;
+        /*font-weight: bold;*/
+        margin: 0px;
+    }
+    .item-radio-checked.item-md ion-label
+    {
+        border: 1px solid #fc6176;
+        text-align: center;
+        border-radius: 20px;
+        padding: 4px 0px;
+        color: #fc6374;
+        font-weight: bold;
+        background: #ffffff;
+    }
+    .radio-icon
+    {
+        display: none !important;
+    }
+    .item-md .radio-md
+    {
+        margin:0px;
+    }
+    .item-md
+    {
+        background: none;
+    }
+    .list-md
+    {
+        margin: 0px !important;
+    }
+	 .player_select_footer
+    {
+
+        background: #565555;
+    }
+    .player_select_footer button
+    {
+        padding: 5px;
+        background: #4CAF50;
+        color: #fff;
+        border: 2px solid #4CAF50;
+        border-radius: 5px;
+        width: 100%;
+    }
+	 .player_name img
+    {
+        width: 30px;
+        float: right;
+        margin-top: -17%;
+    }
+}

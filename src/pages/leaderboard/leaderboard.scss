@@ -1,0 +1,175 @@
+page-leaderboard {
+    .scroll-content
+    {
+        padding: 0px !important;
+    }
+    .header-md::after
+    {
+        background-image:none !important;
+    }
+    .match_grid
+    {
+        background: linear-gradient(90deg, #ff9944 0%, #fc6076 100%) !important;
+    }
+    .toolbar-background
+    {
+        height: 101% !important;
+    }
+    .div-back
+    {
+        background: #fff;
+        border-radius: 5px;
+    }
+    .div-left
+    {
+
+    }
+    .div-left p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+    }
+    .div-left p span
+    {
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    .div-right
+    {
+        text-align: right;
+    }
+    .div-right p
+    {
+        margin: 0px; 
+        padding: 5px 10px;
+        color: #05880a;
+    }
+    .scorecard-div
+    {
+        border-bottom:1px solid #ccc;
+    }
+    .scorecard-div p
+    {
+        margin:0px;
+    }
+    .score-card p
+    {
+        color: #807e7e;
+    }
+    .winteam p
+    {
+        color: #807e7e;
+    }
+    .viewplayer-div
+    {
+        box-shadow: 0px 2px 1px #ccc;
+    }
+    .View-player p
+    {
+        color: #08439a;
+        font-weight: 600;
+        margin: 0px;
+    }
+    .contest-view
+    {
+        border: 1px solid #ccc;
+        margin: 15px;
+        width: 92%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px 1px #ccc;
+    }
+    .contest
+    {
+        padding: 10px 10px;
+    }
+    .contest h4
+    {
+        font-size: 14px;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    .contest p
+    {
+        margin: 0px;
+        color: #a5a3a3;
+    }
+    .entry h4
+    {
+        font-size: 14px;
+        margin-top: 5px !important;
+        margin-bottom: 0px !important;
+    }
+    .entry p
+    {
+        margin: 0px;
+        margin-top: 5px;
+        color: #a5a3a3;
+    }
+    .player_credit1
+    {
+        text-align: right;
+    }
+    .player_credit
+    {
+        text-align: right;
+    }
+    .player_select_footer
+    {
+        background: #565555;    
+        color: #fff;       
+    }
+    .points_footer
+    {
+        padding:0px;
+    }
+    .points_footer p
+    {
+        margin: 0px;
+    }
+    .match_thumbnail img
+    {
+        margin-top:5px !important;
+    }
+    .player_name {
+        padding: 8px 0px 8px 10px !important;
+    }
+    .player_name p {
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+    .player_credit1
+    {
+        padding: 8px 10px 8px 0px !important;
+    }
+    .player_credit
+    {
+        padding: 20px 10px 8px 0px !important;
+        color: #000;
+        font-weight: 500;
+    }
+    .player_img
+    {
+        padding: 8px 0px 8px 10px !important;
+    }
+    .player_img h2
+    {
+        color: #000;
+    }
+    .player_credit h2
+    {
+        color: #000;
+    }
+    .player_credit1 h2
+    {
+        color: #000;
+    }
+    .player_name h4
+    {
+        font-size: 16px;
+        margin-bottom: 5px !important;
+    }
+    .player_name p span
+    {
+
+    }
+}

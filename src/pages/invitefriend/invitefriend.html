@@ -1,0 +1,47 @@
+<!--
+  Generated template for the InvitefriendPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Invite Friend</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="assets/imgs/invitefriend.jpg">
+  <ion-grid >
+    <ion-row>
+      <ion-col col-12>
+        <h2>Invite Friends</h2>
+        <h4>For every friend that plays, you  get {{referal_pts}} for free and he gets {{user_pts}}!</h4>        
+      </ion-col>
+      <ion-col col-6 style="border-right:1px solid #ccc">
+         <p class="howitwork">How it Works</p>     
+        </ion-col>
+        <ion-col col-6>
+            <p class="rules">Rules for Fairplay</p>   
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+
+   <ion-grid style="padding:10px 15px;">
+      <ion-row>
+        <ion-col col-12 class="invite_box">
+          <h2></h2>
+          <h4></h4>   
+          <button (click)="shareurl()">Invite Via Social Networks</button> 
+          <p></p>    
+        </ion-col>
+       </ion-row>
+    </ion-grid>
+
+</ion-content>

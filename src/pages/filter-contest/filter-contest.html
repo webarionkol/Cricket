@@ -1,0 +1,236 @@
+<!--
+  Generated template for the ContestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{site_name}}</ion-title>
+    <button ion-button (click)="openModal()">
+            <img src="assets/imgs/filter.png">
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="contest_page">
+
+		<ion-grid class="match_grid">
+            <ion-row class="div-back">
+                <ion-col col-6 class="div-left">
+                     <p>{{show_team_1}}<span>VS</span>{{show_team_2}}</p>
+                </ion-col>
+                <ion-col col-6 class="div-right">
+                    <p>upcoming</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+    <ion-grid>
+
+        <ion-row>
+            <ion-col col-12>
+                <ion-item class="contest_div_head">
+                   
+                  <ion-thumbnail item-start class="match_thumbnail">
+                      <img src="assets/imgs/contest.png">
+                  </ion-thumbnail>                    
+                          
+                  <h2>Contest List</h2> 
+                       
+                 <p *ngIf="user_join_contest!=0"><button class="my-contest" (click)="my_contest()">My Contest</button></p>
+                           
+                </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-12>
+                <ion-item class="contest_div" *ngFor="let contest of displaycontest;let i=index">
+                   
+                    <ion-row>
+                        <ion-col col-3 class="contest_prize">             
+                            <p>{{contest.name}}</p>
+                            <h2 *ngIf="contest.is_practise_contest==0">{{contest.winning_pirze}}</h2>
+                            <h2 *ngIf="contest.is_practise_contest==1">practise contest</h2>
+                        </ion-col>
+                        <ion-col col-4 class="contest_win">             
+                            <p>WINNERS</p>
+                            <h2 (click)="openRank(contest)">{{contest.no_winner}} </h2>
+                          </ion-col>
+						    <ion-col col-2 class="contest_win">
+                         							
+                            <span class="confirm-contest" *ngIf="contest.is_confirm_contest==1">C</span>
+                            <span class="multiple-contest" *ngIf="contest.mega_contest==1">M</span>
+                          </ion-col>
+                          <ion-col col-3 class="contest_entry">             
+                              <p>ENTERY</p>
+                              <h2>{{contest.enterence_amount}}</h2>
+                          </ion-col>
+                    </ion-row>
+                    
+                    <ion-row>
+                        <ion-col col-9 class="contest_team">  
+                            <div class="team_bar">         
+                              <span class="status_bar" [ngStyle]="{'width': (left_contest[i]/contest.contest_team_length)*100 + '%'}"></span>
+                            </div>   
+                            <p>{{contest.contest_team_length-left_contest[i]}} Teams left</p>
+                           <p class="contest_total_team">{{contest.contest_team_length}} Teams</p>
+                        </ion-col>
+                        <ion-col col-3 class="contest_jion" *ngIf="user_team_count==0" (click)="Goto_selectplayer()">             
+                            <button>Join</button>
+                          </ion-col> 
+						  <ion-col col-3 class="contest_jion" *ngIf="contest.is_multi_entry==0 && particular_unique_contest[i] >= 1 " >             
+                            <button>Join</button>
+                          </ion-col>
+						  <ion-col col-3 class="contest_jion" *ngIf="left_contest[i] >= contest.contest_team_length && particular_unique_contest[i] == 0"  >             
+                            <button (click)="full_contest()">Join</button>
+                          </ion-col> 
+						  <ion-col col-3 class="contest_jion" *ngIf="user_detail < contest.enterence_amount && user_team_count >=1 && left_contest[i] < contest.contest_team_length"  >             
+                            <button (click)="playpoint_purchase()">Join</button>
+                          </ion-col>  
+						  <ion-col col-3 class="contest_jion" *ngIf="user_detail >= contest.enterence_amount  && left_contest[i] < contest.contest_team_length && contest.is_multi_entry==1 && particular_unique_contest[i] >= 0 &&  user_team_count >=1  "  >             
+                            <button (click)="Goto_selectteampage(contest)">Join</button>
+                          </ion-col> 
+						  <ion-col col-3 class="contest_jion" *ngIf="user_detail >= contest.enterence_amount  && left_contest[i] < contest.contest_team_length &&   user_team_count >=1 && contest.is_multi_entry==0 && particular_unique_contest[i] ==0  ">             
+                            <button (click)="Goto_selectteampage(contest)">Join</button>
+                          </ion-col>
+                       
+                    </ion-row>
+                            
+                </ion-item>
+
+
+               <!-- <ion-item class="contest_div">
+                    
+                     <ion-row>
+                         <ion-col col-4 class="contest_prize">             
+                             <p>PRIZE POOL</p>
+                             <h2>1,000</h2>
+                         </ion-col>
+                         <ion-col col-4 class="contest_win">             
+                             <p>WINNERS</p>
+                             <h2>3 </h2>
+                           </ion-col>
+                           <ion-col col-4 class="contest_entry">             
+                               <p>ENTERY</p>
+                               <h2>10</h2>
+                           </ion-col>
+                     </ion-row>
+                     <ion-row>
+                         <ion-col col-9 class="contest_team">  
+                             <div class="team_bar">         
+                               <span class="status_bar"></span>
+                             </div>  
+                             <p>20 Teams left</p>
+                            <p class="contest_total_team">120 Teams</p>
+                         </ion-col>
+                         <ion-col col-3 class="contest_jion" (click)="Goto_selectplayer()">             
+                             <button>Join</button>
+                           </ion-col>
+                         
+                     </ion-row>
+                            
+                 </ion-item>
+
+                 <ion-item class="contest_div">
+                    
+                     <ion-row>
+                         <ion-col col-4 class="contest_prize">             
+                             <p>PRIZE POOL</p>
+                             <h2>500</h2>
+                         </ion-col>
+                         <ion-col col-4 class="contest_win">             
+                             <p>WINNERS</p>
+                             <h2>5 </h2>
+                           </ion-col>
+                           <ion-col col-4 class="contest_entry">             
+                               <p>ENTERY</p>
+                               <h2>100</h2>
+                           </ion-col>
+                     </ion-row>
+                     <ion-row>
+                         <ion-col col-9 class="contest_team">  
+                             <div class="team_bar">         
+                               <span class="status_bar"></span>
+                             </div>  
+                             <p>3 Teams left</p>
+                            <p class="contest_total_team">10 Teams</p>
+                         </ion-col>
+                         <ion-col col-3 class="contest_jion" (click)="Goto_selectplayer()">             
+                             <button>Join</button>
+                           </ion-col>
+                         
+                     </ion-row>
+                            
+                 </ion-item>
+
+                 <ion-item class="contest_div">
+                    
+                     <ion-row>
+                         <ion-col col-4 class="contest_prize">             
+                             <p>PRIZE POOL</p>
+                             <h2>1,00,000</h2>
+                         </ion-col>
+                         <ion-col col-4 class="contest_win">             
+                             <p>WINNERS</p>
+                             <h2>3 </h2>
+                           </ion-col>
+                           <ion-col col-4 class="contest_entry">             
+                               <p>ENTERY</p>
+                               <h2>10</h2>
+                           </ion-col>
+                     </ion-row>
+                     <ion-row>
+                         <ion-col col-9 class="contest_team">  
+                             <div class="team_bar">         
+                               <span class="status_bar"></span>
+                             </div>  
+                             <p>100 Teams left</p>
+                            <p class="contest_total_team">12000 Teams</p>
+                         </ion-col>
+                         <ion-col col-3 class="contest_jion" (click)="Goto_selectplayer()">             
+                             <button>Join</button>
+                           </ion-col>
+                         
+                     </ion-row>
+                            
+                 </ion-item>-->
+
+
+          </ion-col>
+        </ion-row>
+
+        
+
+
+    </ion-grid>
+</ion-content>
+
+
+<ion-footer class="player_select_footer">
+    
+            <ion-grid style="padding:0px;">
+            
+                    <ion-row>
+                
+                        <ion-col col-6 class="create-team" *ngIf="user_team_count <= 5">
+                            <p (click)="Goto_selectplayer()">Create Team</p>
+                        </ion-col>
+						<ion-col col-6 class="view-team" *ngIf="user_team_count > 0">
+                            <p (click)="Goto_viewteam()">View Team</p>
+                        </ion-col>
+                      </ion-row>    
+
+					  
+            
+                </ion-grid>
+    
+    </ion-footer>
