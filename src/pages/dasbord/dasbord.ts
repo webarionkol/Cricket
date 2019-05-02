@@ -104,15 +104,7 @@ ionViewDidLoad() {
     loading.present();
   
 		
-		 this.glo_user_token_v= localStorage.getItem(this.glo_user_token);
-		 
-		 
-
-		
-		  
-		 
-		  //console.log(this.glo_user_token_v);
-		    
+		 this.glo_user_token_v= localStorage.getItem(this.glo_user_token);  
 		 var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Authorization', 'Bearer '+this.glo_user_token_v);
@@ -122,13 +114,13 @@ ionViewDidLoad() {
              "name": "Customer004",
             "email": "customer004@email.com",
             "tel": "0000252525" 
-    }
+   }
  
     this.http.post(this.baseurl+"get-matches", postData, requestOptions)
       .subscribe(data => {
-     
+        console.log(JSON.parse(data['_body']).data)
 		  loading.dismiss();
-
+        
 			 var displaymatch = JSON.parse(data['_body']).data;
 			 this.site_url= JSON.parse(data['_body']).url; 
 			 this.banner_url= JSON.parse(data['_body']).banner.banner_url; 
@@ -136,12 +128,14 @@ ionViewDidLoad() {
 			 this.banner_2= JSON.parse(data['_body']).banner.banner2; 
 			 this.banner_3= JSON.parse(data['_body']).banner.banner3; 
 			 
-	
+       console.log(displaymatch)
 
 var arr = [];
 var intervals = [];
 Object.keys(displaymatch).forEach(function(key)
 {
+  
+
     arr.push(displaymatch[key]);
 	
 	 let countDownDate = new Date(displaymatch[key].app_date_time).getTime();
@@ -181,6 +175,7 @@ Object.keys(displaymatch).forEach(function(key)
 	 intervals.push(x);
 });
 this.times_clear=intervals;
+console.log(arr)
 this.matchlist = arr;
 
 

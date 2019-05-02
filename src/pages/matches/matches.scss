@@ -123,4 +123,18 @@
 		float: left;
 		padding: 5px 10px;
 	}
+	.new{
+		padding:15px;
+		p{
+			color: rgb(190, 183, 183);
+			font-size: 15px;
+		}
+		ion-icon{
+			background-color: rgb(238, 234, 234);
+			padding:30px;
+			color: rgb(190, 183, 183);
+			font-size: 75px;
+			border-radius: 100%;
+		}
+	}
 }

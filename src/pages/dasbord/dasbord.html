@@ -11,10 +11,11 @@
           <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title>{{site_name}}</ion-title>
-        <button ion-button>
+        <ion-buttons right>
+        <button ion-button icon-only>
           <ion-icon name="notifications"></ion-icon>
         </button>
-    
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -42,8 +43,8 @@
 
           <ion-row>
               <ion-col col-12>
-                <ion-slides pager>
-                  <ion-slide>
+                <ion-slides >
+                  <!-- <ion-slide>
                     
 					 <img *ngIf="banner_1==1" src="{{banner_url+'/banner1.jpg'}}">
 					<img *ngIf="banner_1==0" src="assets/imgs/mobile-b.jpg">
@@ -55,7 +56,24 @@
                   <ion-slide>
 					<img *ngIf="banner_3==1" src="{{banner_url+'/banner3.jpg'}}">
 					<img *ngIf="banner_3==0" src="assets/imgs/mobile-b.jpg">
-                  </ion-slide>
+                  </ion-slide> -->
+                  <ion-slide >
+                    <ion-row class="subha">
+                      <ion-col col-2>
+                        <img  src="https://texastitleloan.net/wp-content/uploads/2018/01/getting-started-with-title-loans-in-texas.png">
+                    
+                      </ion-col>
+                      <ion-col col-10>
+                        <p no-margin id="all">
+                          Upto &#8377; 101 cashback on your 1st cash contest. <span style="color:rgb(58, 170, 133)">Deposit Now</span>
+                        </p>
+                        <p no-margin text-right id="tc">*T & C Apply</p>
+                      </ion-col>
+                    </ion-row>
+                    
+                    <!-- <img *ngIf="banner_1==0" src="assets/imgs/mobile-b.jpg"> -->
+                    </ion-slide>
+                  
                 </ion-slides>
             </ion-col>
           </ion-row>
@@ -81,15 +99,11 @@
 
             <ion-list>            
 
-
-
-
-
                   <ion-item class="match_div" *ngFor="let match of matchlist" (click)="Goto_contest(match,times_clear)">
                       
                           <ion-row>
                             <ion-col col-12 class="team_name">
-							<p>{{ match.team_1 }} <span>VS </span>{{ match.team_2 }}</p>
+						         	<p>{{ match.team_1 }} <span>VS </span>{{ match.team_2 }}</p>
                           </ion-col>
                           <ion-col col-4>
                             <ion-thumbnail item-start class="match_thumbnail">

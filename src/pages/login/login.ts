@@ -36,8 +36,8 @@ LoginValidate:FormGroup;
     
     this.text = 'Hello World';
 	// this.baseurl='https://vlive11.com/api/';
-	this.baseurl='http://sportsfantasy24.com/api/';
-	// this.baseurl='http://loot11.com/api/';  
+	// this.baseurl='http://sportsfantasy24.com/api/';
+	this.baseurl='http://loot11.com/api/';  
 	localStorage.setItem('global_baseurl',this.baseurl);
 	this.validate_log=localStorage.getItem('glo_user_token');
 	var global_baseurl=localStorage.getItem('global_baseurl');

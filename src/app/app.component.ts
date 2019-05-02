@@ -101,7 +101,7 @@ counter:any;
 
         if(JSON.parse(data['_body']).status=='success')
         {
-localStorage.removeItem('glo_user_token');
+localStorage.clear();
          // this.navCtrl.setRoot(LoginPage);
 		 
 		          this.nav.push(LoginPage);

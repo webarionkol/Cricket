@@ -7,13 +7,11 @@
 <ion-header>
 
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Matches</ion-title>
-        <button ion-button>
-          <ion-icon name="notifications"></ion-icon>
-        </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Matches</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -22,149 +20,181 @@
 <ion-content padding>
   <ion-segment class="SwipedTabs-tabs">
     <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
-    [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+      [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
       {{tab}}
-</ion-segment-button>
+    </ion-segment-button>
   </ion-segment>
 
   <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
 
-     <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
-                (ionSlideWillChange)="updateIndicatorPosition()"
-                (ionSlideDidChange)="updateIndicatorPosition()"
-                (pan)="updateIndicatorPosition()"
-                [pager]="false"
-          >
+  <ion-slides #SwipedTabsSlider (ionSlideDrag)="animateIndicator($event)"
+    (ionSlideWillChange)="updateIndicatorPosition()" (ionSlideDidChange)="updateIndicatorPosition()"
+    (pan)="updateIndicatorPosition()" [pager]="false">
 
-       <ion-slide class="order_swipe_tab">
+    <ion-slide class="order_swipe_tab">
 
-        <ion-row>
-          <ion-col col-12>
+      <ion-row>
+        <ion-col col-12>
 
-            <ion-list>
+          <ion-list>
 
-                  <ion-item class="match_div" *ngFor="let upcoming of upcomings" (click)=Goto_contest(upcoming)>
-							 <ion-row>
-                            <ion-col col-12 class="team_name">
-                            <p>{{upcoming.team_1}} <span>Vs </span>{{upcoming.team_2   }}</p>
-							</ion-col>
-                          <ion-col col-4>
-                            <ion-thumbnail item-start class="match_thumbnail">
-                                <img *ngIf="upcoming.team1_image" src="{{site_url+'/'+upcoming.team1_image}}">
-                              
-                                <img  *ngIf="!upcoming.team1_image " src="assets/imgs/default.png">
-                            </ion-thumbnail>
-								 </ion-col>
-							  <ion-col col-4>
-							  <h2><img src="assets/imgs/vs.png"></h2>
-							</ion-col>
-							  <ion-col col-4>
-                            <ion-thumbnail item-end class="match_thumbnail">
-                                 <img *ngIf="upcoming.team2_image" src="{{site_url+'/'+upcoming.team2_image}}">
-                              
-                                <img  *ngIf="!upcoming.team2_image " src="assets/imgs/default.png">
-                            </ion-thumbnail>
-                            </ion-col>    
-                          <ion-col col-6>
-         <p class="match_time" id="demo1{{ upcoming.unique_id }}" > <ion-icon name="clock"></ion-icon>   </p>
-						</ion-col>
-                          <ion-col col-6>
-                              <p class="match_click"> Click Here</p>
-                            </ion-col>
-                      </ion-row>    
-                  </ion-item>
+            <ion-item class="match_div" *ngFor="let upcoming of upcomings" (click)=Goto_contest(upcoming)>
+              <ion-row>
+                <ion-col col-12 class="team_name">
+                  <p>{{upcoming.team_1}} <span>Vs </span>{{upcoming.team_2   }}</p>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-thumbnail item-start class="match_thumbnail">
+                    <img *ngIf="upcoming.team1_image" src="{{site_url+'/'+upcoming.team1_image}}">
+
+                    <img *ngIf="!upcoming.team1_image " src="assets/imgs/default.png">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-4>
+                  <h2><img src="assets/imgs/vs.png"></h2>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-thumbnail item-end class="match_thumbnail">
+                    <img *ngIf="upcoming.team2_image" src="{{site_url+'/'+upcoming.team2_image}}">
+
+                    <img *ngIf="!upcoming.team2_image " src="assets/imgs/default.png">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-6>
+                  <p class="match_time" id="demo1{{ upcoming.unique_id }}">
+                    <ion-icon name="clock"></ion-icon>
+                  </p>
+                </ion-col>
+                <ion-col col-6>
+                  <p class="match_click"> Click Here</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
 
 
-            </ion-list>
+          </ion-list>
 
-          </ion-col>
-        </ion-row>
+          <div class="new"> 
+              <p text-center>You haven't joined any upcomming contest</p>
+              <ion-icon name="trophy"></ion-icon>
+              <p text-center>Join contests for any of the upcomming matches</p>
+               <div text-center margin>
 
-      </ion-slide>
+           
+              <button ion-button color="secondary">View upcoming Matches</button>
+            </div>
+            </div>
 
-      <ion-slide class="order_swipe_tab">
+        </ion-col>
+      </ion-row>
 
-        <ion-row>
-          <ion-col col-12>
-            <ion-list>
+    </ion-slide>
 
-                  <ion-item class="match_div" *ngFor="let live of lives" (click)="Goto_matchresult(live,'Live')">
-						 <ion-row>
-                            <ion-col col-12 class="team_name">
-                      <p>{{live.team_1}} <span>Vs</span> {{live.team_2   }}</p>
-						</ion-col>
-                          <ion-col col-4>
-                      <ion-thumbnail item-start class="match_thumbnail">
-                          <img *ngIf="live.team1_image" src="{{site_url+'/'+live.team1_image}}">
-                              
-                                <img  *ngIf="!live.team1_image " src="assets/imgs/default.png">
-                      </ion-thumbnail>
-						</ion-col>
-                          <ion-col col-4>
-                          <h2><img src="assets/imgs/vs.png"></h2>
-                        </ion-col>
-                          <ion-col col-4>
-                      <ion-thumbnail item-end class="match_thumbnail">
-                         <img *ngIf="live.team2_image" src="{{site_url+'/'+live.team2_image}}">
-                              
-                                <img  *ngIf="!live.team2_image " src="assets/imgs/default.png">
-                      </ion-thumbnail>
-                     </ion-col>    
-                          <ion-col col-6>
-                      <p class="match_time">  <ion-icon name="clock"></ion-icon> {{ live.app_date_time }}</p>
-						</ion-col>
-                          <ion-col col-6>
-                              <p class="match_click"> Click Here</p>
-                            </ion-col>
-                      </ion-row>    
-                  </ion-item>
+    <ion-slide class="order_swipe_tab">
 
-            </ion-list>
-          </ion-col>
-        </ion-row>
-      </ion-slide>
+      <ion-row>
+        <ion-col col-12>
+          <ion-list>
 
-      <ion-slide class="order_swipe_tab">
+            <ion-item class="match_div" *ngFor="let live of lives" (click)="Goto_matchresult(live,'Live')">
+              <ion-row>
+                <ion-col col-12 class="team_name">
+                  <p>{{live.team_1}} <span>Vs</span> {{live.team_2   }}</p>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-thumbnail item-start class="match_thumbnail">
+                    <img *ngIf="live.team1_image" src="{{site_url+'/'+live.team1_image}}">
 
-       <ion-row>
-         <ion-col col-12>
-           <ion-list>
+                    <img *ngIf="!live.team1_image " src="assets/imgs/default.png">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-4>
+                  <h2><img src="assets/imgs/vs.png"></h2>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-thumbnail item-end class="match_thumbnail">
+                    <img *ngIf="live.team2_image" src="{{site_url+'/'+live.team2_image}}">
 
-                 <ion-item class="match_div"   *ngFor="let result of results" (click)="Goto_matchresult(result,'Closed')">
-					 <ion-row>
-                        <ion-col col-12 class="team_name">
-                     <p>{{result.team_1}} <span>Vs</span> {{result.team_2   }} </p>
-						</ion-col>
-                          <ion-col col-4>
-                     <ion-thumbnail item-start class="match_thumbnail">
-                         <img *ngIf="result.team1_image" src="{{site_url+'/'+result.team1_image}}">
-                              
-                                <img  *ngIf="!result.team1_image " src="assets/imgs/default.png">
-                     </ion-thumbnail>
-						</ion-col>
-                          <ion-col col-4>
-                          <h2><img src="assets/imgs/vs.png"></h2>
-                        </ion-col>
-                          <ion-col col-4>
-                     <ion-thumbnail item-end class="match_thumbnail">
-                              <img *ngIf="result.team2_image" src="{{site_url+'/'+result.team2_image}}">
-                              
-                                <img  *ngIf="!result.team2_image " src="assets/imgs/default.png">
-                     </ion-thumbnail>
-                      </ion-col>    
-                          <ion-col col-6>
-                     <p class="match_time">  <ion-icon name="clock"></ion-icon>{{ result.app_date_time }} </p>
-					</ion-col>
-                          <ion-col col-6>
-                              <p class="match_click"> Click Here</p>
-                            </ion-col>
-                      </ion-row>    
-                 </ion-item>
+                    <img *ngIf="!live.team2_image " src="assets/imgs/default.png">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-6>
+                  <p class="match_time">
+                    <ion-icon name="clock"></ion-icon> {{ live.app_date_time }}
+                  </p>
+                </ion-col>
+                <ion-col col-6>
+                  <p class="match_click"> Click Here</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
 
-           </ion-list>
-         </ion-col>
-       </ion-row>
-     </ion-slide>
+          </ion-list>
+          <div class="new"> 
+              <p text-center>You haven't joined any upcomming contest</p>
+              <ion-icon name="trophy"></ion-icon>
+              <p text-center>Join contests for any of the upcomming matches</p>
+               <div text-center margin>
 
-   </ion-slides>
+           
+              <button ion-button color="secondary">View upcoming Matches</button>
+            </div>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide class="order_swipe_tab">
+
+      <ion-row>
+        <ion-col col-12>
+          <ion-list>
+
+            <ion-item class="match_div" *ngFor="let result of results" (click)="Goto_matchresult(result,'Closed')">
+              <ion-row>
+                <ion-col col-12 class="team_name">
+                  <p>{{result.team_1}} <span>Vs</span> {{result.team_2   }} </p>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-thumbnail item-start class="match_thumbnail">
+                    <img *ngIf="result.team1_image" src="{{site_url+'/'+result.team1_image}}">
+
+                    <img *ngIf="!result.team1_image " src="assets/imgs/default.png">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-4>
+                  <h2><img src="assets/imgs/vs.png"></h2>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-thumbnail item-end class="match_thumbnail">
+                    <img *ngIf="result.team2_image" src="{{site_url+'/'+result.team2_image}}">
+
+                    <img *ngIf="!result.team2_image " src="assets/imgs/default.png">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-6>
+                  <p class="match_time">
+                    <ion-icon name="clock"></ion-icon>{{ result.app_date_time }}
+                  </p>
+                </ion-col>
+                <ion-col col-6>
+                  <p class="match_click"> Click Here</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+
+          </ion-list>
+          <div class="new"> 
+              <p text-center>You haven't joined any upcomming contest</p>
+              <ion-icon name="trophy"></ion-icon>
+              <p text-center>Join contests for any of the upcomming matches</p>
+      
+              <button ion-button color="secondary">View upcoming Matches</button>
+           
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>

@@ -34,6 +34,7 @@ image:any;
   }
 
   ionViewDidLoad() {
+    console.log("subha")
 	  this.profileimagechange();
   }
 profileimagechange(){	  
@@ -50,7 +51,7 @@ profileimagechange(){
    }
    this.http.post(this.baseurl+"profile",postData ,requestOptions)
       .subscribe(data => {
-
+   
 
 
        if(JSON.parse(data['_body']).status=='success')
@@ -64,9 +65,9 @@ profileimagechange(){
         this.phone=JSON.parse(data['_body']).data.mobile_number;
         this.country=JSON.parse(data['_body']).data.country;
         this.email=JSON.parse(data['_body']).data.email; 
-		this.image=JSON.parse(data['_body']).data.image;
+		    this.image=JSON.parse(data['_body']).data.image;
 
-console.log(this.image);
+
        }
       },(err)=>{
 		  

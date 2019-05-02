@@ -51,8 +51,7 @@ ionViewDidLoad() {
 
     let postData = {
              "match_id": this.Match_Uniqueid,
-             
-         
+   
     }
  
     this.http.post(this.baseurl+"contest_team", postData, requestOptions)

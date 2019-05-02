@@ -55,18 +55,16 @@ baseurl:any;
 
     this.http.post(this.baseurl+"all_matches",postData ,requestOptions)
     .subscribe(data => {
-
-
       //console.log(JSON.parse(data['_body']).data);
-
-
       this.upcomings = JSON.parse(data['_body']).data.upcoming;
        var displaymatches  = JSON.parse(data['_body']).data.upcoming;
-      //console.log('Upcoming__'+JSON.stringify(this.lives));
+      
     this.lives = JSON.parse(data['_body']).data.live;
     this.results = JSON.parse(data['_body']).data.result;
     this.site_url = JSON.parse(data['_body']).data.site_url;
-var arr = [];
+
+      console.log(this.lives.length)
+     var arr = [];
 
 
 Object.keys(displaymatches).forEach(function(key)
@@ -131,11 +129,13 @@ Object.keys(displaymatches).forEach(function(key)
   }
 
   selectTab(index) {
+    console.log(index)
     this.SwipedTabsIndicator.style.webkitTransform = 'translate3d('+(100*index)+'%,0,0)';
     this.SwipedTabsSlider.slideTo(index, 500);
   }
 
   updateIndicatorPosition() {
+    console.log("HI")
       // this condition is to avoid passing to incorrect index
   	if( this.SwipedTabsSlider.length()> this.SwipedTabsSlider.getActiveIndex())
   	{

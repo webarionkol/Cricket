@@ -116,11 +116,11 @@ page-dasbord {
 		padding: 5px 10px;
 		color: #035596;
 	}
-	ion-title
-	{
-		width: 78% !important;
+	// ion-title
+	// {
+	// 	width: 78% !important;
 
-	}
+	// }
 	.notify
 	{
 	background: #fff;
@@ -135,6 +135,23 @@ page-dasbord {
     float: right;
   }
   
-	
+	.subha{
+		border: 1px rgb(204, 199, 199) solid;
+		#all{
+			font-size: 15px;
+		}
+
+	#tc{
+		font-size: 10px;
+		color:gray;
+	}
+		-webkit-box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.4);
+		-moz-box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.4);
+		box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.4);
+			img{
+				width: 50px !important;
+				height: 50px !important;
+			}
+	}
 
 }

@@ -11,9 +11,13 @@
           <ion-icon name="menu"></ion-icon>
         </button>
     <ion-title>{{site_name}}</ion-title>
-    <button ion-button (click)="openModal()">
+
+    <ion-buttons right>
+          
+                    <button ion-button icon-only (click)="openModal()">
             <img src="assets/imgs/filter.png">
       </button>
+    </ion-buttons >
   </ion-navbar>
 
 </ion-header>
@@ -97,9 +101,7 @@
 						  <ion-col col-3 class="contest_jion" *ngIf="contest.is_multi_entry==0 && particular_unique_contest[i] >= 1 " >             
                             <button>Joined</button>
                           </ion-col>
-						 <!-- <ion-col col-3 class="contest_jion" *ngIf="left_contest[i] >= contest.contest_team_length && particular_unique_contest[i] == 0"  >             
-                            <button (click)="full_contest()">Join</button>
-                          </ion-col>  -->
+					
 						  <ion-col col-3 class="contest_jion" *ngIf="user_detail < contest.enterence_amount && user_team_count >=1 && left_contest[i] < contest.contest_team_length"  >             
                             <button (click)="playpoint_purchase()">Join</button>
                           </ion-col>  
