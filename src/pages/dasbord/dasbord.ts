@@ -72,8 +72,9 @@ this.site_name=localStorage.getItem('site_name');
    	    this.SwipedTabsIndicator.style.webkitTransform = 'translate3d(' + (($event.progress* (this.SwipedTabsSlider.length()-1))*100) + '%,0,0)';
   }
  
- Goto_contest(match,intervals){
-   
+ Goto_contest(match,intervals,teamimg1,teamimg2){
+    console.log(teamimg1)
+    console.log(teamimg2)
     
 	//console.log('manda---'+match.unique_id);
 	let match_id=match.unique_id;
@@ -82,7 +83,7 @@ localStorage.setItem(this.MatchId,match_id);
   
   
   
-  this.app.getRootNavs()[0].push(ContestPage,{data:match.unique_id});
+  this.app.getRootNavs()[0].push(ContestPage,{data:match.unique_id,team1:teamimg1,team2:teamimg2});
   //this.navCtrl.setRoot(ContestPage,{data:match.unique_id})
 }
 
@@ -156,8 +157,8 @@ Object.keys(displaymatch).forEach(function(key)
      // console.log(now, "now", "countDownDate", countDownDate, "distance", distance, "days", days);
 
       // Output the result in an element with id="demo"
-  document.getElementById("demo"+displaymatch[key].unique_id).innerHTML = days + "d " + hours + "h "
-   + minutes + "m " + seconds + "s ";   
+  // document.getElementById("demo"+displaymatch[key].unique_id).innerHTML = days + "d " + hours + "h "
+  //  + minutes + "m " + seconds + "s ";   
    // + minutes + "m " + seconds + "s ";   
 	   
 	  //console.log( document.getElementById("demo"+displaymatch[key].unique_id).innerHTML = days + "d " + hours + "h "

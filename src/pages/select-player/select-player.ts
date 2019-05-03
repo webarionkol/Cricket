@@ -51,6 +51,7 @@ bat_list:any;
 isenabled:boolean=false;
 baseurl:any;
 site_name:any;
+
   constructor(public navCtrl: NavController,public events: Events,public navParams: NavParams,public http: Http) {
 	 this.baseurl=localStorage.getItem('global_baseurl'); 
 this.site_name=localStorage.getItem('site_name');	 

@@ -35,12 +35,17 @@ bowler:any;
 wicketkeeper:any;
 baseurl:any;
 player_url:any;
+team1 : any;
+team2 : any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController,public http: Http,public events: Events) {
 	this.baseurl=localStorage.getItem('global_baseurl');   
   }
 
   ionViewDidLoad() {
-    
+			this.team1=localStorage.getItem('player1');
+			this.team2=localStorage.getItem('player2');
+			console.log(this.team1)
+			console.log(this.team2)
    
 	  let loading = this.loadingCtrl.create({
       spinner: 'hide',

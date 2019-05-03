@@ -36,10 +36,15 @@ left_contest:any=[];
  show_team_1:any;
  show_team_2:any;
  hide:boolean=true;
+ team1get: any;
+ team2get : any;
   constructor(public navCtrl: NavController,public loadingCtrl: LoadingController, public navParams: NavParams, public modal: ModalController, public http: Http,public app:App) {
 	this.baseurl=localStorage.getItem('global_baseurl'); 
 	this.site_name=localStorage.getItem('site_name');
-	  }
+	this.team1get=this.navParams.get('team1') 
+	this.team2get=this.navParams.get('team2')	 
+
+}
 
 
   openModal()
@@ -143,8 +148,9 @@ left_contest:any=[];
 	  });  
   }
   Goto_selectplayer(){
-	  
-	  this.navCtrl.setRoot(SelectPlayerPage);
+		localStorage.setItem("player1",this.team1get)
+	  localStorage.setItem("player2",this.team2get)
+	  this.navCtrl.setRoot(SelectPlayerPage,{pla1:this.team1get,pla2:this.team2get});
 	  
 	  
 }

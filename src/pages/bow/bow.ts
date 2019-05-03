@@ -27,6 +27,8 @@ bowl_count='bowl_count';
 /* team_1_count='team_1_count';
 team_2_count='team_2_count'; */
 minus=true; 
+team1: any;
+team2: any;
 
 credit_point_select='credit_point_select';
 baseurl:any;
@@ -36,7 +38,8 @@ player_url:any;
   }
 
   ionViewDidLoad() {
-      
+		this.team1=localStorage.getItem('player1');
+		this.team2=localStorage.getItem('player2');
 	  
 	  let loading = this.loadingCtrl.create({
       spinner: 'hide',

@@ -40,8 +40,11 @@ team_2='team_2';
 checked:boolean;
 baseurl:any;
 player_url:any;
+	team1: any;
+	team2: any;
   constructor(public navCtrl: NavController,public loadingCtrl: LoadingController,public events: Events, public navParams: NavParams,public alertCtrl:AlertController,public http: Http) {
-    
+		this.team1=localStorage.getItem('player1');
+		this.team2=localStorage.getItem('player2');
 	this.baseurl=localStorage.getItem('global_baseurl'); 
 	/* this.items = [
       { name: 'amr mohy', avatar: 'assets/imgs/wk_icon.png'  }, 

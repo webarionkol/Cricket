@@ -99,7 +99,7 @@
 
             <ion-list>            
 
-                  <ion-item class="match_div" *ngFor="let match of matchlist" (click)="Goto_contest(match,times_clear)">
+                  <ion-item class="match_div" *ngFor="let match of matchlist" (click)="Goto_contest(match,times_clear,site_url+'/'+match.team1_image,site_url+'/'+match.team2_image)">
                       
                           <ion-row>
                             <ion-col col-12 class="team_name">
@@ -133,50 +133,6 @@
                       </ion-row>    
                   </ion-item>
 
-                 <!-- <ion-item class="match_div" (click)="Goto_contest()">
-                      <p>T20 League</p>
-                      
-                      <ion-thumbnail item-start class="match_thumbnail">
-                          <img src="assets/imgs/Jozi Stars.jpg">
-                      </ion-thumbnail>
-                  
-                      <ion-thumbnail item-end class="match_thumbnail">
-                        <img src="assets/imgs/Tshwane Spartans.jpg">
-                      </ion-thumbnail>  
-                      <h2>VS</h2>  
-                      
-                      <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>     
-                  </ion-item>
-
-                  <ion-item class="match_div" (click)="Goto_contest()">
-                      <p>T20 League</p>
-                      
-                      <ion-thumbnail item-start class="match_thumbnail">
-                          <img src="assets/imgs/Jozi Stars.jpg">
-                      </ion-thumbnail>
-                  
-                      <ion-thumbnail item-end class="match_thumbnail">
-                        <img src="assets/imgs/Tshwane Spartans.jpg">
-                      </ion-thumbnail>  
-                         <h2>VS</h2>  
-                      
-                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p>     
-                  </ion-item>
-
-                  <ion-item class="match_div" (click)="Goto_contest()">
-                        <p>T20 League</p>
-                      
-                         <ion-thumbnail item-start class="match_thumbnail">
-                             <img src="assets/imgs/Jozi Stars.jpg">
-                         </ion-thumbnail>
-                     
-                         <ion-thumbnail item-end class="match_thumbnail">
-                           <img src="assets/imgs/Tshwane Spartans.jpg">
-                         </ion-thumbnail>  
-                         <h2>VS</h2>  
-                      
-                         <p class="match_time">  <ion-icon name="clock"></ion-icon> 9h 30m 21s</p> 
-                  </ion-item>-->
              
             </ion-list>
 
